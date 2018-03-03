@@ -1,5 +1,6 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient,HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+
 
 /*
   Generated class for the LoginProvider provider.
@@ -13,6 +14,10 @@ export class LoginProvider {
   constructor(public http: HttpClient) {
     console.log('Hello LoginProvider Provider');
   }
-  
+  url :string="http://localhost:3000/ulogin/";
 
+  checkuser(user){
+    let body=JSON.stringify(user);
+   return  this.http.post(this.url,body,{headers:new HttpHeaders().set("Content-Type","application/json")});
+  }
 }

@@ -14,10 +14,10 @@
 <ion-list>
 <br><br><br>
   <ion-item>
-    <ion-input type="text" placeholder="Username" [(ngModel)]="unm"></ion-input>
+    <ion-input type="text" placeholder="Enter Email Id" [(ngModel)]="email_id"></ion-input>
   </ion-item>
   <ion-item>
-    <ion-input type="password" placeholder="Password" [(ngModel)]="passwd"></ion-input>
+    <ion-input type="password" placeholder="Enter Password" [(ngModel)]="password"></ion-input>
   </ion-item>
   <ion-fab >
     <button ion-fab mini><ion-icon name="arrow-dropright-circle"></ion-icon></button>
@@ -28,6 +28,6 @@
   </ion-fab>
 
   <br><br><br>
-  <button (click)="login()" ion-button color="light" round>LOGIN</button>
+  <button (click)="login1()" ion-button color="primary" round full >Login</button>
 </ion-list>
 </ion-content>
