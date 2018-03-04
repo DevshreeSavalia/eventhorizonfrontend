@@ -21,10 +21,24 @@
     </ion-buttons>
   </ion-navbar>
 </ion-header>
+<ion-content padding>
+<ion-item *ngFor="let data of ar">
+<ion-card>
+  <ion-card-content>Name: {{data.e_name}}</ion-card-content>
+      <ion-card-content>
+        Date: {{data.e_date}}
+      </ion-card-content>
+    <ion-card-content>
+        Venue: {{data.e_venue}}
+    </ion-card-content>
+  </ion-card>
+</ion-item>
+</ion-content>
 
-<ion-content>
+
+<!-- <ion-content>
   <table>
-    <ion-item *ngFor="let data of ar">>
+    <ion-item *ngFor="let data of ar">
       <tr>
         <td>
           <label>Event Name:</label>
@@ -39,7 +53,7 @@
           <label>Date:</label>
         </td>
         <td>
-          <label> {{data.e_date}}</label>
+          <label> {{data.e_date}}</label> 
         </td>
       </tr>
 
@@ -73,4 +87,4 @@
   <br>
   <br>
   <ion-label>Members Going..</ion-label>
-</ion-content>
+</ion-content> -->

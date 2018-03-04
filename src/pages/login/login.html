@@ -10,24 +10,24 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content>
 <ion-list>
 <br><br><br>
   <ion-item>
-    <ion-input type="text" placeholder="Enter Email Id" [(ngModel)]="email_id"></ion-input>
+      <ion-label floating>Enter Email ID</ion-label>
+    <ion-input type="text" floating [(ngModel)]="email_id"></ion-input>
   </ion-item>
   <ion-item>
-    <ion-input type="password" placeholder="Enter Password" [(ngModel)]="password"></ion-input>
+      <ion-label floating>Enter Password</ion-label>
+    <ion-input type="password" floating [(ngModel)]="password" ></ion-input>
   </ion-item>
-  <ion-fab >
+  <!-- <ion-fab >
     <button ion-fab mini><ion-icon name="arrow-dropright-circle"></ion-icon></button>
     <ion-fab-list side="right">
-      <button ion-fab><ion-icon name="person"></ion-icon></button>
-      <button ion-fab><ion-icon name="eye"></ion-icon></button>
     </ion-fab-list>
-  </ion-fab>
+  </ion-fab> -->
 
   <br><br><br>
-  <button (click)="login1()" ion-button color="primary" round full >Login</button>
+  <button (click)="login1()" ion-button color="primary" round full>Login</button>
 </ion-list>
 </ion-content>

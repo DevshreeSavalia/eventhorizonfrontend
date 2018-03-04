@@ -2,6 +2,8 @@ import { Component } from "@angular/core";
 import { IonicPage, NavController, NavParams } from "ionic-angular";
 import { LoginProvider } from "../../providers/login/login";
 import { user_login } from "./user_login";
+import { TabsPage } from "../tabs/tabs";
+import { Storage } from '@ionic/storage';
 
 /**
  * Generated class for the LoginPage page.
@@ -22,7 +24,8 @@ export class LoginPage {
   constructor(
     public _data: LoginProvider,
     public navCtrl: NavController,
-    public navParams: NavParams
+    public navParams: NavParams,
+    // public store:Storage
   ) {}
 
   ionViewDidLoad() {
@@ -37,6 +40,8 @@ export class LoginPage {
         {
           console.log("valid");
           localStorage.setItem('user_email',this.email_id);
+          // this.store.set('user_email',this.email_id);
+          this.navCtrl.push(TabsPage);
         }
         else
         {
