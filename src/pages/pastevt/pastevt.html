@@ -9,11 +9,11 @@
     <ion-title>
       <h4>Past Events</h4>
     </ion-title>
-    <ion-buttons start>
+    <!-- <ion-buttons start>
       <button ion-button icon-only>
         <ion-icon name="arrow-back"></ion-icon>
       </button>
-    </ion-buttons>
+    </ion-buttons> -->
     <ion-buttons end>
       <button ion-button icon-only>
         <ion-icon name="log-out"></ion-icon>
@@ -23,11 +23,20 @@
 </ion-header>
 
 <ion-content padding>
-  <ion-label>Event Name:</ion-label>
-  <ion-label>Date: </ion-label>
+  <ion-item *ngFor="let data of ar">
+    <ion-card>
+      <ion-card-content>Name: {{data.e_name}}</ion-card-content>
+          <ion-card-content>
+            Date: {{data.e_date}}
+          </ion-card-content>
+        <ion-card-content>
+            Venue: {{data.e_venue}}
+        </ion-card-content>
+      </ion-card>
+    </ion-item>
 </ion-content>
 
-<ion-content padding>
+<!-- <ion-content padding>
   <br><br><br><br><br><br><br><br><br><br><br>
   <ion-label>Comments/Feedback..</ion-label>
   <ion-list>
@@ -39,6 +48,6 @@
             <ion-icon name="checkbox-outline" ></ion-icon>
         </button>
       </ion-buttons>
-     
+
       </ion-list>
-</ion-content>
+</ion-content> -->

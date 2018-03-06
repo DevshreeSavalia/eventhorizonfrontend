@@ -11,11 +11,16 @@ import { UpcomingevtPage } from '../pages/upcomingevt/upcomingevt';
 import { PastevtPage } from '../pages/pastevt/pastevt';
 import { MemberPage} from '../pages/member/member';
 import { LoginPage } from '../pages/login/login';
+import { UpSegPage } from '../pages/up-seg/up-seg';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { LoginProvider } from '../providers/login/login';
 import { UpcommSegDataProvider } from '../providers/upcomm-page-data/upcomm-page-data';
+import { CommWiseDataProvider } from '../providers/comm-wise-data/comm-wise-data';
+import { MemberDataProvider } from '../providers/member-seg-data/member-seg-data';
+import { PastSegDataProvider } from '../providers/past-seg-data/past-seg-data';
+import { UpcomSegDataProvider } from '../providers/upcom-seg-data/upcom-seg-data';
 
 @NgModule({
   declarations: [
@@ -26,7 +31,8 @@ import { UpcommSegDataProvider } from '../providers/upcomm-page-data/upcomm-page
     UpcomingevtPage,
     PastevtPage,
     MemberPage,
-    LoginPage
+    LoginPage,
+    UpSegPage
   ],
   imports: [
     BrowserModule,
@@ -42,14 +48,19 @@ import { UpcommSegDataProvider } from '../providers/upcomm-page-data/upcomm-page
     UpcomingevtPage,
     PastevtPage,
     MemberPage,
-    LoginPage
+    LoginPage,
+    UpSegPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     LoginProvider,
-    UpcommSegDataProvider
+    UpcommSegDataProvider,
+    CommWiseDataProvider,
+    MemberDataProvider,
+    UpcomSegDataProvider,
+    PastSegDataProvider
   ]
 })
 export class AppModule {}

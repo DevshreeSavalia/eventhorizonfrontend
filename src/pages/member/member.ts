@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { HomePage } from '../home/home';
-
+//import { mem_class } from './member_class';
 /**
  * Generated class for the MemberPage page.
  *

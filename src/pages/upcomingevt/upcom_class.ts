@@ -6,9 +6,6 @@ export class upcomm_class{
         public e_venue:string,
         public comm_id_fk:number,
         public e_desc:string)
-        {
-            
-        }
-
+        {  }
     
 }

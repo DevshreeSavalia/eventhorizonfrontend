@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
+import { upcomm_class } from '../upcomingevt/upcom_class';
+import { PastSegDataProvider } from '../../providers/past-seg-data/past-seg-data';
 /**
  * Generated class for the PastevtPage page.
  *
@@ -14,12 +15,18 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'pastevt.html',
 })
 export class PastevtPage {
-
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  ar:upcomm_class[]=[];
+  constructor(public _past_data:PastSegDataProvider,public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad PastevtPage');
-  }
+    this._past_data.getPastSegment().subscribe(
+      (data:upcomm_class[])=>{
+        this.ar=data;
+      }
+    );
+    
+}
 
 }
