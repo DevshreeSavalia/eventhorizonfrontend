@@ -3,7 +3,7 @@ import { IonicPage, NavController, NavParams } from "ionic-angular";
 import { LoginProvider } from "../../providers/login/login";
 import { user_login } from "./user_login_class";
 import { TabsPage } from "../tabs/tabs";
-//import { Storage } from '@ionic/storage';
+import { Storage } from '@ionic/storage';
 
 /**
  * Generated class for the LoginPage page.
@@ -18,8 +18,8 @@ import { TabsPage } from "../tabs/tabs";
   templateUrl: "login.html"
 })
 export class LoginPage {
-  email_id: string = "";
-  password: string = "";
+  email_id: string = "devarsh@gmail.com";
+  password: string = "devarsh9894";
   tmp:user_login[]=[];
 
   constructor(
@@ -41,6 +41,7 @@ export class LoginPage {
         {
           console.log("valid");
           localStorage.setItem('user_email',this.email_id);
+          console.log(this.email_id);
          //  this.store.set('user_email',this.email_id);
           this.navCtrl.push(TabsPage);
         }

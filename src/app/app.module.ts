@@ -12,16 +12,17 @@ import { PastevtPage } from '../pages/pastevt/pastevt';
 import { MemberPage} from '../pages/member/member';
 import { LoginPage } from '../pages/login/login';
 import { UpSegPage } from '../pages/up-seg/up-seg';
+import { MycommunitiesPage} from '../pages/mycommunities/mycommunities';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-import { LoginProvider } from '../providers/login/login';
+import {LoginProvider} from '../providers/login/login';
 import { UpcommSegDataProvider } from '../providers/upcomm-page-data/upcomm-page-data';
 import { CommWiseDataProvider } from '../providers/comm-wise-data/comm-wise-data';
 import { MemberDataProvider } from '../providers/member-seg-data/member-seg-data';
 import { PastSegDataProvider } from '../providers/past-seg-data/past-seg-data';
 import { UpcomSegDataProvider } from '../providers/upcom-seg-data/upcom-seg-data';
-
+import {CommProvider } from '../providers/comm/comm';
 @NgModule({
   declarations: [
     MyApp,
@@ -32,7 +33,8 @@ import { UpcomSegDataProvider } from '../providers/upcom-seg-data/upcom-seg-data
     PastevtPage,
     MemberPage,
     LoginPage,
-    UpSegPage
+    UpSegPage,
+    MycommunitiesPage
   ],
   imports: [
     BrowserModule,
@@ -49,7 +51,8 @@ import { UpcomSegDataProvider } from '../providers/upcom-seg-data/upcom-seg-data
     PastevtPage,
     MemberPage,
     LoginPage,
-    UpSegPage
+    UpSegPage,
+    MycommunitiesPage
   ],
   providers: [
     StatusBar,
@@ -60,7 +63,8 @@ import { UpcomSegDataProvider } from '../providers/upcom-seg-data/upcom-seg-data
     CommWiseDataProvider,
     MemberDataProvider,
     UpcomSegDataProvider,
-    PastSegDataProvider
+    PastSegDataProvider,
+    CommProvider
   ]
 })
 export class AppModule {}
