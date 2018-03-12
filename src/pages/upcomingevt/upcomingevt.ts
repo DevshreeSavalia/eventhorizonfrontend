@@ -18,15 +18,19 @@ import { UpcommSegDataProvider } from '../../providers/upcomm-page-data/upcomm-p
 })
 export class UpcomingevtPage {
   ar:upcomm_class[]=[];
-
+  email_id:string;
   constructor(public _upseg_data: UpcommSegDataProvider ,public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
+
     console.log('ionViewDidLoad UpcomingevtPage');
-    this._upseg_data.getUpPage().subscribe(
+    this.email_id=localStorage.getItem("user_email");
+    console.log(this.email_id);
+    this._upseg_data.getUpPage(this.email_id).subscribe(
       (data:upcomm_class[])=>{
         this.ar=data;
+
       }
     );
   }

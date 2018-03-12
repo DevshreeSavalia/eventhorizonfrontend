@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { upcomm_class } from '../upcomingevt/upcom_class';
+import { up_seg_class } from './up_seg_class';
 import { UpcomSegDataProvider } from '../../providers/upcom-seg-data/upcom-seg-data';
 
 /**
@@ -16,7 +16,7 @@ import { UpcomSegDataProvider } from '../../providers/upcom-seg-data/upcom-seg-d
   templateUrl: 'up-seg.html',
 })
 export class UpSegPage {
-  ar:upcomm_class[]=[];
+  ar:up_seg_class[]=[];
   email_id:string;
   name:string;
   date:string;
@@ -26,14 +26,15 @@ export class UpSegPage {
   }
 
   ionViewDidLoad() {
-    this.email_id=localStorage.getItem("user_email");
-    alert(this.email_id);
+    // this.email_id=localStorage.getItem("user_email");
+    // alert(this.email_id);
     console.log('ionViewDidLoad UpSegPage');
-    this._upseg.getUpSegment(this.email_id).subscribe(
-      (data:upcomm_class)=>{
-        this.name=data[0].e_name;
-        this.date=data[0].e_date;
-        this.venue=data[0].e_venue;
+    this._upseg.getUpSegment().subscribe(
+      (dataa:up_seg_class[])=>{
+        // this.name=dataa[0].e_name;
+        // this.date=dataa[0].e_date;
+        // this.venue=dataa[0].e_venue;
+        this.ar=dataa;
       }
     );
   }

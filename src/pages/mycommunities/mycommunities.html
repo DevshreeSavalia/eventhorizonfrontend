@@ -15,11 +15,11 @@
 
 <ion-content padding >
 <ion-item *ngFor="let item of c1">
-<ion-card>
-  <ion-card-content>Name: {{item.comm_name}}</ion-card-content>
-      <ion-card-content>
-        Date: {{item.comm_desc}}
-      </ion-card-content>
+  <!-- <button (click)="com_page(item.email_id_fk)"> -->
+<ion-card (click)="com_page(item.comm_id)">
+  <ion-card-content >
+    Name: {{item.comm_name}}</ion-card-content>
 </ion-card>
+<!-- </button> -->
 </ion-item>
 </ion-content>

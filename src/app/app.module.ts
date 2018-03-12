@@ -16,13 +16,16 @@ import { MycommunitiesPage} from '../pages/mycommunities/mycommunities';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-import {LoginProvider} from '../providers/login/login';
+import { LoginProvider } from '../providers/login/login';
 import { UpcommSegDataProvider } from '../providers/upcomm-page-data/upcomm-page-data';
 import { CommWiseDataProvider } from '../providers/comm-wise-data/comm-wise-data';
 import { MemberDataProvider } from '../providers/member-seg-data/member-seg-data';
 import { PastSegDataProvider } from '../providers/past-seg-data/past-seg-data';
 import { UpcomSegDataProvider } from '../providers/upcom-seg-data/upcom-seg-data';
-import {CommProvider } from '../providers/comm/comm';
+import { CommProvider } from '../providers/comm/comm';
+import { CommDataProvider } from '../providers/comm-data/comm-data';
+
+
 @NgModule({
   declarations: [
     MyApp,
@@ -39,7 +42,7 @@ import {CommProvider } from '../providers/comm/comm';
   imports: [
     BrowserModule,
     HttpClientModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -64,7 +67,8 @@ import {CommProvider } from '../providers/comm/comm';
     MemberDataProvider,
     UpcomSegDataProvider,
     PastSegDataProvider,
-    CommProvider
+    CommProvider,
+    CommDataProvider
   ]
 })
 export class AppModule {}

@@ -5,33 +5,54 @@
   Ionic pages and navigation.
 -->
 <ion-header>
-    <ion-navbar color="primary">
-        <ion-title><h4>Community Name</h4></ion-title>
-      <ion-buttons start>
+  <ion-navbar color="primary">
+    <ion-title>
+      <h4>Community Name</h4>
+    </ion-title>
+    <!-- <ion-buttons start>
         <button ion-button icon-only >
           <ion-icon name="arrow-back" ></ion-icon>
         </button>
-      </ion-buttons>
-      <ion-buttons end>
-        <button ion-button icon-only>
-          <ion-icon name="add-circle"  ></ion-icon>
-        </button>
-      </ion-buttons>
-      <ion-buttons end>
-          <button ion-button icon-only>
-            <ion-icon name="log-out" ></ion-icon>
-          </button>
-        </ion-buttons>
-    </ion-navbar>
-  </ion-header>
+      </ion-buttons> -->
+    <ion-buttons end>
+      <button ion-button icon-only>
+        <ion-icon name="add-circle"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-buttons end>
+      <button ion-button icon-only>
+        <ion-icon name="log-out"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
 
-  <ion-content padding>
-    <ion-label>Description:</ion-label>
-    <ion-label>Created by:</ion-label>
-  </ion-content>   
+<ion-content padding>
+  <table>
+    <thead>
+      <tr>
+        <th>Description : </th>
+      </tr>
+    </thead>
+    </table>
+    <table>
+      <tr *ngFor="let dataa of arr">
+        <td>{{dataa.comm_desc}}</td>
+      </tr>
+  </table>
+  <table>
+      <thead>
+        <tr>
+          <th>Members : </th>
+          <td *ngFor="let dataa of arr">
+            {{dataa.user_name}},</td>
+      </thead>
+      </table>
+</ion-content>
+
 
 <ion-footer>
-  <div padding >
+  <div padding>
     <ion-segment [(ngModel)]="evt">
       <ion-segment-button value="upcoming">
         UPCOMING
@@ -47,47 +68,51 @@
   <div [ngSwitch]="evt">
     <ion-list *ngSwitchCase="'upcoming'">
       <ion-item>
-          <ion-thumbnail item-start>
-              <img src="../assets/imgs/com1_tec.jpg">
-            </ion-thumbnail>
-        <h2><button (click)="up()">Tech</button></h2>
+        <ion-thumbnail item-start>
+          <img src="../assets/imgs/com1_tec.jpg">
+        </ion-thumbnail>
+        <h2>
+          <button (click)="up()">Tech</button>
+        </h2>
       </ion-item>
       <ion-item>
-          <ion-thumbnail item-start>
-              <img src="../assets/imgs/com2_tec.jpg">
-            </ion-thumbnail>
+        <ion-thumbnail item-start>
+          <img src="../assets/imgs/com2_tec.jpg">
+        </ion-thumbnail>
         <h2>Tech</h2>
       </ion-item>
-      </ion-list>
+    </ion-list>
 
-      <ion-list *ngSwitchCase="'past'">
+    <ion-list *ngSwitchCase="'past'">
       <ion-item>
-          <ion-thumbnail item-start>
-              <img src="img/com1_mus.jpg">
-            </ion-thumbnail>
-            <h2><button (click)="past()">Music</button></h2>
+        <ion-thumbnail item-start>
+          <img src="img/com1_mus.jpg">
+        </ion-thumbnail>
+        <h2>
+          <button (click)="past()">Music</button>
+        </h2>
       </ion-item>
       <ion-item>
-          <ion-thumbnail item-start>
-              <img src="img/com1_photo.jpg">
-            </ion-thumbnail>
+        <ion-thumbnail item-start>
+          <img src="img/com1_photo.jpg">
+        </ion-thumbnail>
         <h2>Photography</h2>
       </ion-item>
-      </ion-list>
+    </ion-list>
 
-      <ion-list *ngSwitchCase="'member'">
-          <ion-item>
-              <ion-thumbnail item-start>
-                  <img src="img/com1_lan.jpg">
-                </ion-thumbnail>
-            <h2>Language</h2>
-          </ion-item>
-          <ion-item>
-              <ion-thumbnail item-start>
-                  <img src="img/com1_soc.jpg">
-                </ion-thumbnail>
-            <h2>Social</h2>
-          </ion-item>
-          </ion-list>
-    </div>
-  </ion-footer>
+    <ion-list *ngSwitchCase="'member'">
+      <ion-item>
+        <ion-thumbnail item-start>
+          <img src="img/com1_lan.jpg">
+        </ion-thumbnail>
+        <h2>Language</h2>
+      </ion-item>
+      <ion-item>
+        <ion-thumbnail item-start>
+          <img src="img/com1_soc.jpg">
+        </ion-thumbnail>
+        <h2>Social</h2>
+      </ion-item>
+    </ion-list>
+  </div>
+</ion-footer>

@@ -9,12 +9,12 @@ import { Injectable } from '@angular/core';
 */
 @Injectable()
 export class UpcommSegDataProvider {
-  url:string="http://localhost:3000/upcompage";
+  url:string="http://localhost:3000/upcompage/";
   constructor(public http: HttpClient) {
     console.log('Hello UpcommSegDataProvider Provider');
   }
-  getUpPage(){
-    return this.http.get(this.url);
+  getUpPage(id){
+    return this.http.get(this.url+id);
   }
 
 }

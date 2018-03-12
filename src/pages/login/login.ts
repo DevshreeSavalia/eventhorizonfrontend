@@ -18,8 +18,8 @@ import { Storage } from '@ionic/storage';
   templateUrl: "login.html"
 })
 export class LoginPage {
-  email_id: string = "devarsh@gmail.com";
-  password: string = "devarsh9894";
+  email_id: string = "devshree456@gmail.com";
+  password: string = "devshree456";
   tmp:user_login[]=[];
 
   constructor(
