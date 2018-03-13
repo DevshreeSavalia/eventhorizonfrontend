@@ -4,6 +4,7 @@ import { PastevtPage } from '../pastevt/pastevt';
 import { UpSegPage } from '../up-seg/up-seg';
 import { comm_class } from './comm_class_id';
 import { CommDataProvider } from '../../providers/comm-data/comm-data';
+import { MemberPage } from '../member/member';
 
 /**
  * Generated class for the CommNamePage page.
@@ -34,15 +35,20 @@ export class CommNamePage {
           // this.comm_desc=dataa[0].comm_desc;
           // this.email_id_fk=dataa[0].email_id_fk;
          this.arr=dataa;
+         console.log(this.arr);
       }
     );
   }
 
-  up(){
-    this.navCtrl.push(UpSegPage);
+  up(id:number){
+    this.navCtrl.push(UpSegPage,{id:id});
   }
 
-  past(){
-    this.navCtrl.push(PastevtPage);
+  past(cid:number){
+    this.navCtrl.push(PastevtPage,{id:cid});
+  }
+
+  member(mid:number){
+    this.navCtrl.push(MemberPage,{id:mid});
   }
 }

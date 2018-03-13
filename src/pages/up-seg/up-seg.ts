@@ -21,16 +21,17 @@ export class UpSegPage {
   name:string;
   date:string;
   venue:string;
-  
+  id:number;
   constructor(public _upseg:UpcomSegDataProvider ,public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
-    // this.email_id=localStorage.getItem("user_email");
-    // alert(this.email_id);
+    this.id=this.navParams.get('id');
+    console.log(this.id);
     console.log('ionViewDidLoad UpSegPage');
-    this._upseg.getUpSegment().subscribe(
+    this._upseg.getUpSegment(this.id).subscribe(
       (dataa:up_seg_class[])=>{
+        console.log(this.ar);
         // this.name=dataa[0].e_name;
         // this.date=dataa[0].e_date;
         // this.venue=dataa[0].e_venue;

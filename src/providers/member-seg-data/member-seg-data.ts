@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient,HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 /*
@@ -9,9 +9,11 @@ import { Injectable } from '@angular/core';
 */
 @Injectable()
 export class MemberDataProvider {
-
+  url:string="http://localhost:3000/memsgmt/"
   constructor(public http: HttpClient) {
     console.log('Hello MemberDataProvider Provider');
   }
-
+  getMembSegment(id){
+    return this.http.get(this.url+id);
+  }
 }

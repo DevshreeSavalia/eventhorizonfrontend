@@ -12,6 +12,14 @@ export class comm_class{
         public mobile:number,
         public gender:string,
         public type:string,
-        public password:string
+        public password:string,
+
+        public e_id:number,
+        public e_name:string,
+        public e_date:string,
+        public e_venue:string,
+        public comm_id_fk:number,
+        public e_desc:string,
+
     ){}
 }

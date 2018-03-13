@@ -16,7 +16,7 @@
 <ion-content padding >
 <ion-item *ngFor="let item of c1">
   <!-- <button (click)="com_page(item.email_id_fk)"> -->
-<ion-card (click)="com_page(item.comm_id)">
+<ion-card (click)="com_page(item.comm_id)" text-wrap>
   <ion-card-content >
     Name: {{item.comm_name}}</ion-card-content>
 </ion-card>

@@ -29,7 +29,8 @@ export class MycommunitiesPage {
     this.email_id = localStorage.getItem("user_email");
     alert(this.email_id);
     console.log("ionViewDidLoad MycommunitiesPage");
-    this._cm.getCommunityById(this.email_id).subscribe((data: comm_class[]) => {
+    this._cm.getCommunityById(this.email_id).subscribe(
+      (data: comm_class[]) => {
       this.c1 = data;
       console.log(this.c1);
       /*this.com_id=data[0].comm_id;

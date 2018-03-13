@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient,HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 /*
@@ -9,12 +9,12 @@ import { Injectable } from '@angular/core';
 */
 @Injectable()
 export class PastSegDataProvider {
-  url:string="http://localhost:3000/pastsgmt/1";
+  url:string="http://localhost:3000/pastsgmt/";
  
   constructor(public http: HttpClient) {
     console.log('Hello PastSegDataProvider Provider');
   }
-  getPastSegment(){
-    return this.http.get(this.url);
+  getPastSegment(id){
+    return this.http.get(this.url+id);
   }
 }

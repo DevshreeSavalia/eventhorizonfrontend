@@ -40,14 +40,6 @@
         <td>{{dataa.comm_desc}}</td>
       </tr>
   </table>
-  <table>
-      <thead>
-        <tr>
-          <th>Members : </th>
-          <td *ngFor="let dataa of arr">
-            {{dataa.user_name}},</td>
-      </thead>
-      </table>
 </ion-content>
 
 
@@ -65,39 +57,34 @@
       </ion-segment-button>
     </ion-segment>
   </div>
-  <div [ngSwitch]="evt">
-    <ion-list *ngSwitchCase="'upcoming'">
-      <ion-item>
+  <ion-item *ngFor="let dataa of arr">
+  <div [ngSwitch]="evt" >
+    <ion-list *ngSwitchCase="'upcoming'" >
+      <ion-item >
         <ion-thumbnail item-start>
           <img src="../assets/imgs/com1_tec.jpg">
         </ion-thumbnail>
         <h2>
-          <button (click)="up()">Tech</button>
+          <button (click)="up(dataa.comm_id)">{{dataa.e_name}}</button>
         </h2>
-      </ion-item>
-      <ion-item>
-        <ion-thumbnail item-start>
-          <img src="../assets/imgs/com2_tec.jpg">
-        </ion-thumbnail>
-        <h2>Tech</h2>
       </ion-item>
     </ion-list>
 
     <ion-list *ngSwitchCase="'past'">
-      <ion-item>
+      <ion-item >
         <ion-thumbnail item-start>
           <img src="img/com1_mus.jpg">
         </ion-thumbnail>
         <h2>
-          <button (click)="past()">Music</button>
+          <button (click)="past(dataa.comm_id)">Music</button>
         </h2>
       </ion-item>
-      <ion-item>
+      <!-- <ion-item>
         <ion-thumbnail item-start>
           <img src="img/com1_photo.jpg">
         </ion-thumbnail>
         <h2>Photography</h2>
-      </ion-item>
+      </ion-item> -->
     </ion-list>
 
     <ion-list *ngSwitchCase="'member'">
@@ -105,14 +92,15 @@
         <ion-thumbnail item-start>
           <img src="img/com1_lan.jpg">
         </ion-thumbnail>
-        <h2>Language</h2>
+        <h2><button (click)="member(dataa.comm_id)">{{dataa.e_name}}</button></h2>
       </ion-item>
-      <ion-item>
+      <!-- <ion-item>
         <ion-thumbnail item-start>
           <img src="img/com1_soc.jpg">
         </ion-thumbnail>
         <h2>Social</h2>
-      </ion-item>
+      </ion-item> -->
     </ion-list>
   </div>
+  </ion-item>
 </ion-footer>

@@ -20,16 +20,17 @@ export class PastevtPage {
   name:string;
   date:string;
   venue:string;
+  id:number;
   constructor(public _past_data:PastSegDataProvider,public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
-    // this.email_id=localStorage.getItem("user_email"); 
-    // alert(this.email_id);
+    this.id=this.navParams.get('id'); 
+    alert(this.id);
     console.log('ionViewDidLoad PastevtPage');
-    this._past_data.getPastSegment().subscribe(
+    this._past_data.getPastSegment(this.id).subscribe(
       (data:past_seg_class[])=>{
-        console.log(this.ar=data);
+        console.log(this.ar);
         // this.name=data[0].e_name;
         // this.date=data[0].e_date;
         // this.venue=data[0].e_venue;
