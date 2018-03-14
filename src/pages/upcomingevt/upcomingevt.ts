@@ -30,9 +30,7 @@ export class UpcomingevtPage {
     this._upseg_data.getUpPage(this.email_id).subscribe(
       (data:upcomm_class[])=>{
         this.ar=data;
-
-      }
+    }
     );
   }
-
 }

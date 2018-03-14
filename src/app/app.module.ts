@@ -13,6 +13,7 @@ import { MemberPage} from '../pages/member/member';
 import { LoginPage } from '../pages/login/login';
 import { UpSegPage } from '../pages/up-seg/up-seg';
 import { MycommunitiesPage} from '../pages/mycommunities/mycommunities';
+import { UpdatePage } from '../pages/update/update';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -24,6 +25,7 @@ import { PastSegDataProvider } from '../providers/past-seg-data/past-seg-data';
 import { UpcomSegDataProvider } from '../providers/upcom-seg-data/upcom-seg-data';
 import { CommProvider } from '../providers/comm/comm';
 import { CommDataProvider } from '../providers/comm-data/comm-data';
+import { UpdateProvider } from '../providers/update/update';
 
 
 @NgModule({
@@ -37,7 +39,8 @@ import { CommDataProvider } from '../providers/comm-data/comm-data';
     MemberPage,
     LoginPage,
     UpSegPage,
-    MycommunitiesPage
+    MycommunitiesPage,
+    UpdatePage
   ],
   imports: [
     BrowserModule,
@@ -55,7 +58,8 @@ import { CommDataProvider } from '../providers/comm-data/comm-data';
     MemberPage,
     LoginPage,
     UpSegPage,
-    MycommunitiesPage
+    MycommunitiesPage,
+    UpdatePage
   ],
   providers: [
     StatusBar,
@@ -68,7 +72,8 @@ import { CommDataProvider } from '../providers/comm-data/comm-data';
     UpcomSegDataProvider,
     PastSegDataProvider,
     CommProvider,
-    CommDataProvider
+    CommDataProvider,
+    UpdateProvider
   ]
 })
 export class AppModule {}
