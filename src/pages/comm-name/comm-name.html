@@ -14,11 +14,11 @@
           <ion-icon name="arrow-back" ></ion-icon>
         </button>
       </ion-buttons> -->
-    <ion-buttons end>
+    <!-- <ion-buttons end>
       <button ion-button icon-only>
         <ion-icon name="add-circle"></ion-icon>
       </button>
-    </ion-buttons>
+    </ion-buttons> -->
     <ion-buttons end>
       <button ion-button icon-only>
         <ion-icon name="log-out"></ion-icon>
@@ -76,7 +76,7 @@
           <img src="img/com1_mus.jpg">
         </ion-thumbnail>
         <h2>
-          <button (click)="past(dataa.comm_id)">Music</button>
+          <button (click)="past(dataa.comm_id)">{{dataa.e_name}}</button>
         </h2>
       </ion-item>
       <!-- <ion-item>

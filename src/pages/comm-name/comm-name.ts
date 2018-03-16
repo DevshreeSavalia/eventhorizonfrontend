@@ -32,8 +32,6 @@ export class CommNamePage {
     console.log(this.id);
     this._comm_data.getCommunityByIdd(this.id).subscribe(
       (dataa:comm_class[])=>{
-          // this.comm_desc=dataa[0].comm_desc;
-          // this.email_id_fk=dataa[0].email_id_fk;
          this.arr=dataa;
          console.log(this.arr);
       }

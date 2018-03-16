@@ -13,6 +13,7 @@ import { MemberPage} from '../pages/member/member';
 import { LoginPage } from '../pages/login/login';
 import { UpSegPage } from '../pages/up-seg/up-seg';
 import { MycommunitiesPage} from '../pages/mycommunities/mycommunities';
+import { SignupPage } from '../pages/signup/signup';
 import { UpdatePage } from '../pages/update/update';
 
 import { StatusBar } from '@ionic-native/status-bar';
@@ -25,6 +26,7 @@ import { PastSegDataProvider } from '../providers/past-seg-data/past-seg-data';
 import { UpcomSegDataProvider } from '../providers/upcom-seg-data/upcom-seg-data';
 import { CommProvider } from '../providers/comm/comm';
 import { CommDataProvider } from '../providers/comm-data/comm-data';
+import { SignupdataProvider } from '../providers/signupdata/signupdata';
 import { UpdateProvider } from '../providers/update/update';
 
 
@@ -40,6 +42,7 @@ import { UpdateProvider } from '../providers/update/update';
     LoginPage,
     UpSegPage,
     MycommunitiesPage,
+    SignupPage,
     UpdatePage
   ],
   imports: [
@@ -59,6 +62,7 @@ import { UpdateProvider } from '../providers/update/update';
     LoginPage,
     UpSegPage,
     MycommunitiesPage,
+    SignupPage,
     UpdatePage
   ],
   providers: [
@@ -73,6 +77,7 @@ import { UpdateProvider } from '../providers/update/update';
     PastSegDataProvider,
     CommProvider,
     CommDataProvider,
+    SignupdataProvider,
     UpdateProvider
   ]
 })

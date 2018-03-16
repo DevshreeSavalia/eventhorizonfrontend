@@ -4,6 +4,7 @@ import { LoginProvider } from "../../providers/login/login";
 import { user_login } from "./user_login_class";
 import { TabsPage } from "../tabs/tabs";
 import { Storage } from '@ionic/storage';
+import { SignupPage } from "../signup/signup";
 
 /**
  * Generated class for the LoginPage page.
@@ -47,9 +48,13 @@ export class LoginPage {
         }
         else
         {
-          console.log("invalid");
+          alert("Invalid credentails...Entry again.");
         }
       }
     );
+  }
+
+  signup() {
+    this.navCtrl.push(SignupPage);
   }
 }
