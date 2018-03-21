@@ -15,6 +15,8 @@ import { UpSegPage } from '../pages/up-seg/up-seg';
 import { MycommunitiesPage} from '../pages/mycommunities/mycommunities';
 import { SignupPage } from '../pages/signup/signup';
 import { UpdatePage } from '../pages/update/update';
+import { SearchPage } from '../pages/search/search';
+
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -28,6 +30,7 @@ import { CommProvider } from '../providers/comm/comm';
 import { CommDataProvider } from '../providers/comm-data/comm-data';
 import { SignupdataProvider } from '../providers/signupdata/signupdata';
 import { UpdateProvider } from '../providers/update/update';
+import { SearchdataProvider } from '../providers/searchdata/searchdata';
 
 
 @NgModule({
@@ -43,7 +46,8 @@ import { UpdateProvider } from '../providers/update/update';
     UpSegPage,
     MycommunitiesPage,
     SignupPage,
-    UpdatePage
+    UpdatePage,
+    SearchPage
   ],
   imports: [
     BrowserModule,
@@ -63,7 +67,8 @@ import { UpdateProvider } from '../providers/update/update';
     UpSegPage,
     MycommunitiesPage,
     SignupPage,
-    UpdatePage
+    UpdatePage,
+    SearchPage
   ],
   providers: [
     StatusBar,
@@ -78,7 +83,8 @@ import { UpdateProvider } from '../providers/update/update';
     CommProvider,
     CommDataProvider,
     SignupdataProvider,
-    UpdateProvider
+    UpdateProvider,
+    SearchdataProvider
   ]
 })
 export class AppModule {}

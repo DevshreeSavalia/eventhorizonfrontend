@@ -3,7 +3,6 @@ import { IonicPage, NavController, NavParams } from "ionic-angular";
 import { LoginProvider } from "../../providers/login/login";
 import { user_login } from "./user_login_class";
 import { TabsPage } from "../tabs/tabs";
-import { Storage } from '@ionic/storage';
 import { SignupPage } from "../signup/signup";
 
 /**
