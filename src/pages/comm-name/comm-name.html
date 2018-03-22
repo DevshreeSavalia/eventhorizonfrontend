@@ -60,7 +60,7 @@
   <ion-item *ngFor="let dataa of arr">
   <div [ngSwitch]="evt" >
     <ion-list *ngSwitchCase="'upcoming'" >
-      <ion-item >
+      <ion-item *ngFor="let dataa of arr">
         <ion-thumbnail item-start>
           <img src="../assets/imgs/com1_tec.jpg">
         </ion-thumbnail>
@@ -73,11 +73,10 @@
     <ion-list *ngSwitchCase="'past'">
       <ion-item >
         <ion-thumbnail item-start>
-          <img src="img/com1_mus.jpg">
+          <img src="../assets/imgs/com1_mus.jpg">
         </ion-thumbnail>
-        <h2>
           <button (click)="past(dataa.comm_id)">{{dataa.e_name}}</button>
-        </h2>
+        
       </ion-item>
       <!-- <ion-item>
         <ion-thumbnail item-start>
@@ -90,7 +89,7 @@
     <ion-list *ngSwitchCase="'member'">
       <ion-item>
         <ion-thumbnail item-start>
-          <img src="img/com1_lan.jpg">
+          <img src="../assets/imgs/com1_lan.jpg">
         </ion-thumbnail>
         <h2><button (click)="member(dataa.comm_id)">{{dataa.e_name}}</button></h2>
       </ion-item>

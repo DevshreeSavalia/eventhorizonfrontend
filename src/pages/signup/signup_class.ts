@@ -5,7 +5,8 @@ export class signup{
       public mobile:number,
       public gender:string,
       public type:string,
-      public password:string
+      public password:string,
+      public tokenn:string
       
     ) {}
   }

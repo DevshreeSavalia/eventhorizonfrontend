@@ -30,13 +30,29 @@
       <ion-input type="number" [(ngModel)]="mobile"></ion-input>
     </ion-item>
 
+    <ion-list radio-group>
+      <ion-list-header>
+        Gender
+      </ion-list-header>
+    
       <ion-item>
+        <ion-label>Male</ion-label>
+        <ion-radio  value="male"></ion-radio>
+      </ion-item>
+    
+      <ion-item>
+        <ion-label>Female</ion-label>
+        <ion-radio value="female"></ion-radio>
+      </ion-item>
+      </ion-list>
+
+      <!-- <ion-item>
         <ion-label>Gender</ion-label>
         <ion-select [(ngModel)]="gender">
             <ion-option value="female">Female</ion-option>
             <ion-option value="male">Male</ion-option>
           </ion-select>
-        </ion-item>
+        </ion-item> -->
 
       <ion-item>
         <ion-label>Type</ion-label>
@@ -49,7 +65,14 @@
   <ion-item>
       <ion-label floating>Password</ion-label>
       <ion-input type="password" [(ngModel)]="password"></ion-input>
-    </ion-item>  
+    </ion-item> 
+    
+    <button ion-button color="primary" round small (click)="getToken()">Get Token</button>
+    
+    <ion-item>
+      <ion-label floating>Token</ion-label>
+      <ion-input type="number" [(ngModel)]="tokenn"></ion-input>
+    </ion-item> 
 
     <button ion-button color="primary" round full (click)="adduser()">Sign Up</button>
 </ion-list> 

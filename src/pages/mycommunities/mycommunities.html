@@ -19,7 +19,8 @@
   <!-- <button (click)="com_page(item.email_id_fk)"> -->
 <ion-card (click)="com_page(item.comm_id)" text-wrap>
   <ion-card-content >
-    Name: {{item.comm_name}}</ion-card-content>
+    <img src="http://localhost:3000/images/user/{{item.banner_image}}" height="200px" width="250px" >
+   {{item.comm_name}}</ion-card-content>
 </ion-card>
 <!-- </button> -->
 </ion-item>
