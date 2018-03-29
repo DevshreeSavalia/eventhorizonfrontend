@@ -8,6 +8,7 @@
   <ion-navbar color="primary">
     <ion-title>
       <h4>Upcoming Events</h4>
+     
     </ion-title>
     <!-- <ion-buttons start>
       <button ion-button icon-only>
@@ -15,21 +16,35 @@
       </button>
     </ion-buttons> -->
     <ion-buttons end>
-      <button ion-button icon-only>
+      <button ion-button icon-only (click)="logout()" >
         <ion-icon name="log-out"></ion-icon>
       </button>
     </ion-buttons>
   </ion-navbar>
 </ion-header>
 <ion-content padding>
+    <div #map id="map"></div>
 <ion-item *ngFor="let dataa of ar">
+    <!-- <ion-buttons end>
+        <button ion-button (click)="addMarker()">
+          <ion-icon name="add"></ion-icon>Add Marker</button>
+      </ion-buttons>  -->
 <ion-card>
-  <ion-card-content>Name: {{dataa.e_name}}</ion-card-content>
+  <ion-card-content>
+        
+      <!-- <img src="http://localhost:3000/images/event/{{item.image}}" height="200px" width="250px" > -->
+      Name: {{dataa.e_name}}</ion-card-content>
       <ion-card-content>Date: {{dataa.e_date}}
       </ion-card-content>
     <ion-card-content>
         Venue: {{dataa.e_venue}}
     </ion-card-content>
+    <!-- <ion-item>
+        <button ion-button icon-left clear item-end>
+          <ion-icon name="navigate"></ion-icon>
+          Start
+        </button>
+      </ion-item> -->
   </ion-card>
 </ion-item>
 </ion-content>

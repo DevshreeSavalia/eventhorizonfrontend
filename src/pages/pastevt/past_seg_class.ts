@@ -6,6 +6,7 @@ export class past_seg_class{
         public e_venue:string,
         public comm_id_fk:number,
         public e_desc:string,
+        public image:string,
         
         public comm_id:number,
         public comm_name:string,

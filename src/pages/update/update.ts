@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { LoginPage } from '../login/login';
 
 /**
  * Generated class for the UpdatePage page.
@@ -21,5 +22,7 @@ export class UpdatePage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad UpdatePage');
   }
-
+  logout(){
+    this.navCtrl.parent.parent.setRoot(LoginPage);
+  }
 }

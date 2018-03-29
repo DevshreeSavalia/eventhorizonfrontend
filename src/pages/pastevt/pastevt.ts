@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { past_seg_class } from './past_seg_class';
 import { PastSegDataProvider } from '../../providers/past-seg-data/past-seg-data';
+import { LoginPage } from '../login/login';
+
 /**
  * Generated class for the PastevtPage page.
  *
@@ -37,7 +39,8 @@ export class PastevtPage {
         this.ar=data;
       }
     );
-    
-}
-
+  }
+    logout(){
+      this.navCtrl.parent.parent.setRoot(LoginPage);
+    }
 }

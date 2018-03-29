@@ -31,7 +31,7 @@ import { CommDataProvider } from '../providers/comm-data/comm-data';
 import { SignupdataProvider } from '../providers/signupdata/signupdata';
 import { UpdateProvider } from '../providers/update/update';
 import { SearchdataProvider } from '../providers/searchdata/searchdata';
-
+import { GeolocationProvider } from '../providers/geolocation/geolocation';
 
 @NgModule({
   declarations: [
@@ -73,6 +73,7 @@ import { SearchdataProvider } from '../providers/searchdata/searchdata';
   providers: [
     StatusBar,
     SplashScreen,
+    GeolocationProvider,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     LoginProvider,
     UpcommSegDataProvider,

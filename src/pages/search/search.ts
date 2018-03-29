@@ -2,6 +2,7 @@ import { Component } from "@angular/core";
 import { IonicPage, NavController, NavParams } from "ionic-angular";
 import { SearchdataProvider } from "../../providers/searchdata/searchdata";
 import { search } from "./search_class";
+import {LoginPage} from '../login/login';
 
 /**
  * Generated class for the SearchPage page.
@@ -48,5 +49,9 @@ export class SearchPage {
       }
     )
     }
+  }
+
+  logout(){
+    this.navCtrl.parent.parent.setRoot(LoginPage);
   }
 }

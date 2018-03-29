@@ -1,7 +1,11 @@
-import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { up_seg_class } from './up_seg_class';
-import { UpcomSegDataProvider } from '../../providers/upcom-seg-data/upcom-seg-data';
+import { Component, ViewChild, ElementRef } from "@angular/core";
+import { IonicPage, NavController, NavParams } from "ionic-angular";
+import { up_seg_class } from "./up_seg_class";
+import { UpcomSegDataProvider } from "../../providers/upcom-seg-data/upcom-seg-data";
+import { GeolocationProvider } from "../../providers/geolocation/geolocation";
+import { LoginPage } from '../login/login';
+
+declare var google;
 
 /**
  * Generated class for the UpSegPage page.
@@ -12,32 +16,68 @@ import { UpcomSegDataProvider } from '../../providers/upcom-seg-data/upcom-seg-d
 
 @IonicPage()
 @Component({
-  selector: 'page-up-seg',
-  templateUrl: 'up-seg.html',
+  selector: "page-up-seg",
+  templateUrl: "up-seg.html"
 })
 export class UpSegPage {
-  ar:up_seg_class[]=[];
-  email_id:string;
-  name:string;
-  date:string;
-  venue:string;
-  id:number;
-  constructor(public _upseg:UpcomSegDataProvider ,public navCtrl: NavController, public navParams: NavParams) {
-  }
+  @ViewChild("map") mapElement: ElementRef;
+  map: any;
+  ar: up_seg_class[] = [];
+  email_id: string;
+  name: string;
+  date: string;
+  venue: string;
+  id: number;
+  constructor(
+    public _upseg: UpcomSegDataProvider,
+    public navCtrl: NavController,
+    public navParams: NavParams,
+    public geolocation: GeolocationProvider
+  ) {}
 
   ionViewDidLoad() {
-    this.id=this.navParams.get('id');
+   // this.loadMap();
+    this.id = this.navParams.get("id");
     console.log(this.id);
-    console.log('ionViewDidLoad UpSegPage');
-    this._upseg.getUpSegment(this.id).subscribe(
-      (dataa:up_seg_class[])=>{
-        console.log(this.ar);
-        // this.name=dataa[0].e_name;
-        // this.date=dataa[0].e_date;
-        // this.venue=dataa[0].e_venue;
-        this.ar=dataa;
-      }
-    );
+    console.log("ionViewDidLoad UpSegPage");
+    this._upseg.getUpSegment(this.id).subscribe((item: up_seg_class[]) => {
+      
+      this.ar = item;
+      console.log(this.ar);
+      this.geo_code(this.ar[0].e_venue);
+    }); 
+  }
+geo_code(address:string){
+  console.log("inside geo_code");
+  this.geolocation.getCurrentPosition(address).subscribe(
+    (data:any)=>{
+      this.loadMap(data);
+    }
+  );
+}
+  loadMap(data:any) {
+    let lat=data["results"][0].geometry.location.lat;
+    let lng=data["results"][0].geometry.location.lng;
+    let latLng = new google.maps.LatLng(lat, lng);
+
+    let mapOptions = {
+      center: latLng,
+      zoom: 15,
+      mapTypeId: google.maps.MapTypeId.ROADMAP
+    };
+
+    this.map = new google.maps.Map(this.mapElement.nativeElement, mapOptions);
+    var marker = new google.maps.Marker({
+      position: latLng,
+      title: '',
+      map: this.map,
+      draggable: true
+    });
   }
 
+  logout(){
+    this.navCtrl.parent.parent.setRoot(LoginPage);
+  }
 }
+
+  

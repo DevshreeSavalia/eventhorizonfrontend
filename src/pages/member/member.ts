@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { HomePage } from '../home/home';
 import { mem_class } from './member_class';
 import { MemberDataProvider } from '../../providers/member-seg-data/member-seg-data';
+import { LoginPage } from '../login/login';
 /**
  * Generated class for the MemberPage page.
  *
@@ -39,7 +40,7 @@ export class MemberPage {
     );
     
   }
-//  logout(){
-//   this.navCtrl.push(HomePage);
-// }
+ logout(){
+  this.navCtrl.parent.parent.setRoot(LoginPage);
+}
 }
