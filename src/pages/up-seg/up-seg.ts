@@ -62,14 +62,14 @@ geo_code(address:string){
 
     let mapOptions = {
       center: latLng,
-      zoom: 15,
+      zoom: 16,
       mapTypeId: google.maps.MapTypeId.ROADMAP
     };
 
     this.map = new google.maps.Map(this.mapElement.nativeElement, mapOptions);
     var marker = new google.maps.Marker({
       position: latLng,
-      title: '',
+      title: this.venue,
       map: this.map,
       draggable: true
     });

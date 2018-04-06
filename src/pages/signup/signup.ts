@@ -36,7 +36,7 @@ export class SignupPage {
   }
 
   adduser(){
-    this.signdt=new signup(this.email,this.uname,(+this.mobile),this.gender,this.type,this.password,this.tokenn);
+    this.signdt=new signup(this.email,this.uname,(+this.mobile),this.gender,this.type,this.password);
     console.log("signed up..",this.signdt);
     this._signdata.addUser(this.signdt).subscribe(
       (item:any)=>{
@@ -46,10 +46,18 @@ export class SignupPage {
         this._signdata.sendmail(new email(message,this.email,"Verification")).subscribe((data)=>{
           console.log(data);
         });
-        this.navCtrl.push(UpcomingevtPage);
+        alert('Check your mail!!!');
       }
     );
-    
+  }
+
+  verify(){
+    if(this.token.match(this.tokenn)){
+      this.navCtrl.push(UpcomingevtPage);
+    }
+    else{
+      alert('Invalid Token value...Enter again!!!');
+    }
   }
 
 }
