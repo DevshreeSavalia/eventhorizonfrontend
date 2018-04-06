@@ -38,8 +38,6 @@ export class SignupPage {
   adduser(){
     this.signdt=new signup(this.email,this.uname,(+this.mobile),this.gender,this.type,this.password);
     console.log("signed up..",this.signdt);
-    this._signdata.addUser(this.signdt).subscribe(
-      (item:any)=>{
       var val = Math.floor(1000 + Math.random() * 9000);
       this.token=val.toString();
       var message="Respected Sir/Madam,Congratulations!!!Greetings from Event Horizon.You have successfully signed up at Event Horizon App.Use it wisely.Your OTP is  "+val+".If there is any feedback do inform us on evthorizonn@gmail.com";
@@ -47,17 +45,19 @@ export class SignupPage {
           console.log(data);
         });
         alert('Check your mail!!!');
-      }
-    );
   }
 
   verify(){
+    this._signdata.addUser(this.signdt).subscribe(
+      (item:any)=>{
     if(this.token.match(this.tokenn)){
       this.navCtrl.push(UpcomingevtPage);
     }
     else{
       alert('Invalid Token value...Enter again!!!');
     }
+  }
+  );
   }
 
 }
