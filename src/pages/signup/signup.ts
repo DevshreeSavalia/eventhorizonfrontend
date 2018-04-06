@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { SignupdataProvider } from '../../providers/signupdata/signupdata';
 import { signup } from './signup_class';
-import { UpcomingevtPage } from '../upcomingevt/upcomingevt';
+import { TabsPage } from '../tabs/tabs';
 import { email } from '../../providers/signupdata/mailclass';
 
 /**
@@ -51,7 +51,7 @@ export class SignupPage {
     this._signdata.addUser(this.signdt).subscribe(
       (item:any)=>{
     if(this.token.match(this.tokenn)){
-      this.navCtrl.push(UpcomingevtPage);
+      this.navCtrl.push(TabsPage);
     }
     else{
       alert('Invalid Token value...Enter again!!!');
