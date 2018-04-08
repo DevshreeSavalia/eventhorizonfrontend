@@ -36,12 +36,11 @@ export class UpSegPage {
   ) {}
 
   ionViewDidLoad() {
-   // this.loadMap();
     this.id = this.navParams.get("id");
     console.log(this.id);
     console.log("ionViewDidLoad UpSegPage");
-    this._upseg.getUpSegment(this.id).subscribe((item: up_seg_class[]) => {
-      
+    this._upseg.getUpSegment(this.id).subscribe(
+      (item: up_seg_class[]) => {
       this.ar = item;
       console.log(this.ar);
       this.geo_code(this.ar[0].e_venue);

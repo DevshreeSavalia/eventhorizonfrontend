@@ -5,6 +5,7 @@ import { UpSegPage } from '../up-seg/up-seg';
 import { comm_class } from './comm_class_id';
 import { CommDataProvider } from '../../providers/comm-data/comm-data';
 import { MemberPage } from '../member/member';
+import { LoginPage } from '../login/login';
 
 /**
  * Generated class for the CommNamePage page.
@@ -22,7 +23,6 @@ export class CommNamePage {
   arr:comm_class[]=[];
   id:string;
   comm_desc:string;
-  email_id_fk:string;
   constructor(public _comm_data:CommDataProvider,public navCtrl: NavController, public navParams: NavParams) {
   }
 
@@ -48,5 +48,8 @@ export class CommNamePage {
 
   member(mid:number){
     this.navCtrl.push(MemberPage,{id:mid});
+  }
+  logout(){
+    this.navCtrl.parent.parent.setRoot(LoginPage);
   }
 }

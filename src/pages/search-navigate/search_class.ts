@@ -1,4 +1,4 @@
-export class search {
+export class search_dt {
   constructor(
     public c_id: number,
     public c_name: string,

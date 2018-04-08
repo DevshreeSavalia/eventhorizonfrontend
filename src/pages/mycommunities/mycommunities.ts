@@ -12,13 +12,8 @@ import { LoginPage } from '../login/login';
 })
 export class MycommunitiesPage {
   menuIsHidden: boolean = false;
-
   c1: comm_class[] = [];
   com_id: number;
-  com_name: string;
-  cid_fk: number;
-  comm_desc: string;
-  banner_img: string;
   email_id: string;
 
   constructor(

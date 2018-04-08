@@ -16,6 +16,7 @@ import { MycommunitiesPage} from '../pages/mycommunities/mycommunities';
 import { SignupPage } from '../pages/signup/signup';
 import { UpdatePage } from '../pages/update/update';
 import { SearchPage } from '../pages/search/search';
+import { SearchNavigatePage } from '../pages/search-navigate/search-navigate';
 
 
 import { StatusBar } from '@ionic-native/status-bar';
@@ -47,7 +48,8 @@ import { GeolocationProvider } from '../providers/geolocation/geolocation';
     MycommunitiesPage,
     SignupPage,
     UpdatePage,
-    SearchPage
+    SearchPage,
+    SearchNavigatePage
   ],
   imports: [
     BrowserModule,
@@ -68,7 +70,8 @@ import { GeolocationProvider } from '../providers/geolocation/geolocation';
     MycommunitiesPage,
     SignupPage,
     UpdatePage,
-    SearchPage
+    SearchPage,
+    SearchNavigatePage
   ],
   providers: [
     StatusBar,

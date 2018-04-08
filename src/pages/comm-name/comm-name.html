@@ -9,16 +9,6 @@
     <ion-title>
       <h4>Community Name</h4>
     </ion-title>
-    <!-- <ion-buttons start>
-        <button ion-button icon-only >
-          <ion-icon name="arrow-back" ></ion-icon>
-        </button>
-      </ion-buttons> -->
-    <!-- <ion-buttons end>
-      <button ion-button icon-only>
-        <ion-icon name="add-circle"></ion-icon>
-      </button>
-    </ion-buttons> -->
     <ion-buttons end>
       <button ion-button icon-only>
         <ion-icon name="log-out"></ion-icon>
@@ -64,7 +54,7 @@
     <ion-list *ngSwitchCase="'upcoming'" >
       <ion-item *ngFor="let dataa of arr">
         <ion-thumbnail item-start>
-          <img src="../assets/imgs/com1_tec.jpg">
+          <img src="http://localhost:3000/images/user/{{dataa.banner_image}}">
         </ion-thumbnail>
         <h2>
           <button (click)="up(dataa.comm_id)"></button>
@@ -75,7 +65,7 @@
     <ion-list *ngSwitchCase="'past'">
       <ion-item >
         <ion-thumbnail item-start>
-          <img src="../assets/imgs/com1_mus.jpg">
+          <img src="http://localhost:3000/images/user/{{dataa.banner_image}}">
         </ion-thumbnail>
           <button (click)="past(dataa.comm_id)"></button>
         
@@ -85,7 +75,7 @@
     <ion-list *ngSwitchCase="'member'">
       <ion-item>
         <ion-thumbnail item-start>
-          <img src="../assets/imgs/com1_lan.jpg">
+          <img src="http://localhost:3000/images/user/{{dataa.banner_image}}">
         </ion-thumbnail>
         <h2><button (click)="member(dataa.comm_id)"></button></h2>
       </ion-item>

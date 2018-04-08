@@ -19,23 +19,16 @@ import { LoginPage } from '../login/login';
 export class PastevtPage {
   ar:past_seg_class[]=[];
   email_id:string;
-  name:string;
-  date:string;
-  venue:string;
   id:number;
   constructor(public _past_data:PastSegDataProvider,public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
-    this.id=this.navParams.get('id'); 
-    alert(this.id);
+    this.id=this.navParams.get('id');
     console.log('ionViewDidLoad PastevtPage');
     this._past_data.getPastSegment(this.id).subscribe(
       (data:past_seg_class[])=>{
         console.log(this.ar);
-        // this.name=data[0].e_name;
-        // this.date=data[0].e_date;
-        // this.venue=data[0].e_venue;
         this.ar=data;
       }
     );

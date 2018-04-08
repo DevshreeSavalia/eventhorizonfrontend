@@ -16,4 +16,8 @@ export class SearchdataProvider {
   getAllCategory(){
     return this.http.get(this.url);
   }
+
+  getCommunity(id){
+    return this.http.get(this.url+id);
+  }
 }

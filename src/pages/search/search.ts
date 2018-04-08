@@ -2,7 +2,8 @@ import { Component } from "@angular/core";
 import { IonicPage, NavController, NavParams } from "ionic-angular";
 import { SearchdataProvider } from "../../providers/searchdata/searchdata";
 import { search } from "./search_class";
-import {LoginPage} from '../login/login';
+import { LoginPage } from "../login/login";
+import { SearchNavigatePage } from "../search-navigate/search-navigate";
 
 /**
  * Generated class for the SearchPage page.
@@ -18,7 +19,7 @@ import {LoginPage} from '../login/login';
 })
 export class SearchPage {
   ar: search[] = [];
-  item:search[]=[];
+  item: search[] = [];
   constructor(
     public _search: SearchdataProvider,
     public navCtrl: NavController,
@@ -27,31 +28,33 @@ export class SearchPage {
 
   ionViewDidLoad() {
     console.log("ionViewDidLoad SearchPage");
-    this._search.getAllCategory().subscribe(
-      (item:search[])=>{
-        this.ar=item;
-        this.item=this.ar;
-      }
-    );
-  
+    this._search.getAllCategory().subscribe((item: search[]) => {
+      this.ar = item;
+      this.item = this.ar;
+    });
   }
-  initial(){
-    this.item=this.ar;
+  initial() {
+    this.item = this.ar;
   }
-  getItems(ev){
+  getItems(ev) {
     this.initial();
     let data = ev.target.value;
 
-    if(data && data.trim() != ''){
-      this.item = this.ar.filter((dataa)=>
-      {
-        return(dataa.c_name.toLowerCase().indexOf(data.toLowerCase())>-1);
-      }
-    )
+    if (data && data.trim() != "") {
+      this.item = this.ar.filter(dataa => {
+        return dataa.c_name.toLowerCase().indexOf(data.toLowerCase()) > -1;
+      });
     }
   }
 
-  logout(){
+  com_page(id: number) {
+    console.log(id);
+    this.navCtrl.push(SearchNavigatePage, {
+      id: id
+    });
+  }
+
+  logout() {
     this.navCtrl.parent.parent.setRoot(LoginPage);
   }
 }
