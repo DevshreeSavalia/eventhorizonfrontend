@@ -6,8 +6,8 @@
 -->
 <ion-header>
 
-  <ion-navbar  color="primary">
-    <ion-title>SEARCH</ion-title>
+  <ion-navbar  color="secondary">
+    <ion-title><h6><b>Search</b></h6></ion-title>
     <ion-buttons end>
       <button ion-button icon-only (click)="logout()">
         <ion-icon name="log-out"></ion-icon>
@@ -18,9 +18,9 @@
 </ion-header>
 
 
-<ion-content padding>
-  <ion-searchbar (ionInput)="getItems($event)" ></ion-searchbar>
-  <ion-item *ngFor="let i of item">>
-    <button (click)="com_page(i.c_id)"> {{i.c_name}} </button>
+<ion-content class="search">
+  <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
+  <ion-item *ngFor="let i of item">
+    <button (click)="com_page(i.c_id)">{{i.c_name}}</button>
     </ion-item>
 </ion-content>

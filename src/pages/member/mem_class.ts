@@ -14,11 +14,8 @@ export class mem_class{
         public type:string,
         public password:string,
 
-        public e_id:number,
-        public e_name:string,
-        public e_date:string,
-        public e_venue:string,
-        public comm_id_fk:number,
-        public e_desc:string,
+       public comm_reg_id:number,
+       public comm_id_fk:number
+    
     ){}
 }

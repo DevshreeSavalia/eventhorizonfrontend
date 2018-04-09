@@ -5,6 +5,7 @@ import { Component } from '@angular/core';
 import { UpcomingevtPage } from '../upcomingevt/upcomingevt';
 import { MycommunitiesPage} from '../mycommunities/mycommunities';
 import { SearchPage } from '../search/search';
+import {ProfilePage} from '../profile/profile';
 
 @Component({
   templateUrl: 'tabs.html'
@@ -14,6 +15,7 @@ export class TabsPage {
   tab1Root = SearchPage;
   tab3Root= UpcomingevtPage;
   tab4Root =  MycommunitiesPage;
+  tab5Root = ProfilePage;
   constructor() {
 
   }

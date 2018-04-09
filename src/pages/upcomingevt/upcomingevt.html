@@ -5,10 +5,8 @@
   Ionic pages and navigation.
 -->
 <ion-header>
-  <ion-navbar color="primary">
-    <ion-title>
-      <h4>Upcoming Events</h4>
-    </ion-title>
+  <ion-navbar color="secondary">
+    <ion-title><b>Upcoming Events</b></ion-title>
     <ion-buttons end>
       <button ion-button icon-only (click)="logout()">
         <ion-icon name="log-out" ></ion-icon>
@@ -16,18 +14,18 @@
     </ion-buttons>
   </ion-navbar>
 </ion-header>
-<ion-content padding>
+<ion-content class="up">
 <ion-item *ngFor="let data of ar">
 <ion-card>
-  <ion-card-content>Name: {{data.e_name}}</ion-card-content>
+  <ion-card-content><b>Name: {{data.e_name}}</b></ion-card-content>
       <ion-card-content>
-        Start Date: {{data.e_startdate}}
-      </ion-card-content>
-      <ion-card-content>
+        <b>Start Date: {{data.e_startdate}}
+      </b></ion-card-content>
+      <ion-card-content><b>
         End Date: {{data.e_enddate}}
-      </ion-card-content>
+      </b></ion-card-content>
     <ion-card-content>
-        Venue: {{data.e_venue}}
+        <b>Venue: {{data.e_venue}}</b>
     </ion-card-content>
   </ion-card>
 </ion-item>

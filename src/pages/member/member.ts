@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { HomePage } from '../home/home';
-import { mem_class } from './member_class';
+import {mem_class} from './mem_class'
 import { MemberDataProvider } from '../../providers/member-seg-data/member-seg-data';
 import { LoginPage } from '../login/login';
 /**
@@ -18,9 +18,6 @@ import { LoginPage } from '../login/login';
 })
 export class MemberPage {
   ar:mem_class[]=[];
-  name:string;
-  date:string;
-  venue:string;
   id:number;
   constructor(public _memdata:MemberDataProvider,public navCtrl: NavController, public navParams: NavParams) {
   }
