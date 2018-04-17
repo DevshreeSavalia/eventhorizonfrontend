@@ -13,7 +13,6 @@ import { LoginPage } from '../login/login';
 export class MycommunitiesPage {
   menuIsHidden: boolean = false;
   c1: comm_class[] = [];
-  com_id: number;
   email_id: string;
 
   constructor(
@@ -32,7 +31,6 @@ export class MycommunitiesPage {
     });
   }
   com_page(id: number) {
-    console.log(id);
     this.navCtrl.push(CommNamePage, {
       id: id
     });

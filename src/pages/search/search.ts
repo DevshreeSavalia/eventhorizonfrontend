@@ -28,7 +28,8 @@ export class SearchPage {
 
   ionViewDidLoad() {
     console.log("ionViewDidLoad SearchPage");
-    this._search.getAllCategory().subscribe((item: search[]) => {
+    this._search.getAllCategory().subscribe(
+      (item: search[]) => {
       this.ar = item;
       this.item = this.ar;
     });
@@ -48,10 +49,10 @@ export class SearchPage {
   }
 
   com_page(id: number) {
-    console.log(id);
     this.navCtrl.push(SearchNavigatePage, {
       id: id
     });
+    console.log(id);
   }
 
   logout() {

@@ -19,8 +19,8 @@
 
 
 <ion-content padding>
-  <ion-searchbar (ionInput)="getItems($event)" ></ion-searchbar>
-  <ion-item *ngFor="let i of item">>
+  <ion-searchbar (ionInput)="getItems($event)" ></ion-searchbar>  
+  <ion-item *ngFor="let i of item">
     <button (click)="com_page(i.c_id)"> {{i.c_name}} </button>
     </ion-item>
 </ion-content>
