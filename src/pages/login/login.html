@@ -6,7 +6,7 @@
 -->
 <ion-header color="primary">
   <ion-navbar hideBackButton="true">
-    <ion-title>LOGIN</ion-title>
+    <ion-title><b>EVENT HORIZON</b></ion-title>
   </ion-navbar>
 </ion-header>
 
@@ -14,22 +14,22 @@
 <ion-list>
 <br><br><br>
   <ion-item>
-      <ion-label floating>Enter Email ID</ion-label>
+      <ion-label floating><b>Enter Email ID</b></ion-label>
     <ion-input type="text" floating [(ngModel)]="email_id"></ion-input>
   </ion-item>
   <ion-item>
-      <ion-label floating>Enter Password</ion-label>
+      <ion-label floating><b>Enter Password</b></ion-label>
     <ion-input type="password" floating [(ngModel)]="password" ></ion-input>
   </ion-item>
 
   <br>
-  <button (click)="login1()" ion-button color="primary" round full>Login</button>
+  <button (click)="login1()" ion-button color="secondary" round full>LOGIN</button>
 </ion-list>
 <!-- <ion-footer> -->
-  <ion-label><h6>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Don't have one...Then signup!!</h6></ion-label>
+  <ion-label><h6><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Don't have one...Then signup!!</b></h6></ion-label>
 <ion-buttons>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<button ion-button icon-only small (click)="signup()">
-  <ion-icon name="signup" >SIGN UP</ion-icon>
+<button ion-button icon-only small (click)="signup()"  ion-button color="secondary" >
+  <ion-icon name="signup">SIGN UP</ion-icon>
 </button>
 </ion-buttons>
 <!-- </ion-footer> -->

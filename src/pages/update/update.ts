@@ -36,6 +36,7 @@ export class UpdatePage {
     this.updata.updateUser(this.email,this.ar).subscribe(
       ()=>{
         alert("updated...");
+        console.log(this.ar);
       }
     );
   }
