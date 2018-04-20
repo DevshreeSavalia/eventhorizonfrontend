@@ -18,9 +18,16 @@
 </ion-header>
 
 
+<<<<<<< HEAD
+<ion-content padding>
+  <ion-searchbar (ionInput)="getItems($event)" ></ion-searchbar>  
+  <ion-item *ngFor="let i of item">
+    <button (click)="com_page(i.c_id)"> {{i.c_name}} </button>
+=======
 <ion-content class="search">
   <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
   <ion-item *ngFor="let i of item">
     <button (click)="com_page(i.c_id)">{{i.c_name}}</button>
+>>>>>>> e406d155f8977ff4d6eddec36eb47828d7e33f5b
     </ion-item>
 </ion-content>

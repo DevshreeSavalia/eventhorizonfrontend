@@ -5,6 +5,8 @@ import { Component } from '@angular/core';
 import { UpcomingevtPage } from '../upcomingevt/upcomingevt';
 import { MycommunitiesPage} from '../mycommunities/mycommunities';
 import { SearchPage } from '../search/search';
+import { ComCreatePage } from '../com-create/com-create';
+import { UpdatePage } from '../update/update';
 import {ProfilePage} from '../profile/profile';
 
 @Component({
@@ -13,9 +15,11 @@ import {ProfilePage} from '../profile/profile';
 export class TabsPage {
 
   tab1Root = SearchPage;
-  tab3Root= UpcomingevtPage;
-  tab4Root =  MycommunitiesPage;
-  tab5Root = ProfilePage;
+  tab2Root= UpcomingevtPage;
+  tab3Root =  MycommunitiesPage;
+  tab4Root = ComCreatePage;
+  tab5Root = UpdatePage;
+  tab6Root = ProfilePage;
   constructor() {
 
   }

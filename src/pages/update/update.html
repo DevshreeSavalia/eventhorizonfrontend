@@ -14,23 +14,33 @@
       </button>
     </ion-buttons>
   </ion-navbar>
-
 </ion-header>
 
 <ion-content padding>
-  <ion-list>
-
+  
   <ion-item>
     <ion-label floating>Username</ion-label>
-    <ion-input type="text"></ion-input>
-</ion-item>
-   <ion-item>
-    <ion-label floating>Gender</ion-label>
-    <ion-input type="text"></ion-input>
-    </ion-item>
+    <ion-input type="text" [(ngModel)]="unm"></ion-input>
+  </ion-item>
+
   <ion-item>
-    <ion-label floating>Mobile</ion-label> 
-    <ion-input type="text"></ion-input>
+    <ion-label>Gender</ion-label>
+    <ion-select [(ngModel)]="gender">
+        <ion-option value="female">f</ion-option>
+        <ion-option value="male">m</ion-option>
+      </ion-select>
     </ion-item>
-</ion-list>
+
+    <ion-item>
+    <ion-label floating>Mobile</ion-label> 
+    <ion-input type="text" [(ngModel)]="mobile"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Password</ion-label> 
+      <ion-input type="password" [(ngModel)]="passwd"></ion-input>
+      </ion-item>
+
+    <button ion-button color="primary" round full (click)="update()">Update</button>
+
 </ion-content>

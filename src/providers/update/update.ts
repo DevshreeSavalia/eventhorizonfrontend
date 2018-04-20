@@ -1,5 +1,7 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient,HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+
+
 
 /*
   Generated class for the UpdateProvider provider.
@@ -9,9 +11,13 @@ import { Injectable } from '@angular/core';
 */
 @Injectable()
 export class UpdateProvider {
-
+  url:string="http://localhost:3000/user/";
   constructor(public http: HttpClient) {
     console.log('Hello UpdateProvider Provider');
   }
-
+  updateUser(email,updt){
+    let body=JSON.stringify(updt);
+    console.log(body);
+    return this.http.put(this.url,body,{headers:new HttpHeaders().set('Content-type','application/json')});
+  }
 }

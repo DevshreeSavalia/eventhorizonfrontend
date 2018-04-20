@@ -27,12 +27,13 @@ export class SearchNavigatePage {
     this.id=this.navParams.get('id');
     console.log(this.id);
     this._search.getCommunity(this.id).subscribe(
-      (dataa:search_dt[])=>{
-         this.arr=dataa;
-         console.log(this.arr);
+      (dt:search_dt[])=>{
+        this.arr=dt;
+        console.log(this.arr);
       }
     );
   }
+
   logout(){
     this.navCtrl.parent.parent.setRoot(LoginPage);
   }

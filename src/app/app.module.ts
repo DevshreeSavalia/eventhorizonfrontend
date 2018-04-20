@@ -17,8 +17,12 @@ import { SignupPage } from '../pages/signup/signup';
 import { UpdatePage } from '../pages/update/update';
 import { SearchPage } from '../pages/search/search';
 import { SearchNavigatePage } from '../pages/search-navigate/search-navigate';
+
 import {ProfilePage} from '../pages/profile/profile';
 //import { ComCreatePage } from '../pages/com-create/com-create';
+
+import { ComCreatePage } from '../pages/com-create/com-create';
+
 
 
 import { StatusBar } from '@ionic-native/status-bar';
@@ -35,8 +39,12 @@ import { SignupdataProvider } from '../providers/signupdata/signupdata';
 import { UpdateProvider } from '../providers/update/update';
 import { SearchdataProvider } from '../providers/searchdata/searchdata';
 import { GeolocationProvider } from '../providers/geolocation/geolocation';
+
 import {ProfileProvider} from '../providers/profile/profile';
 //import { ComCreateProvider } from '../providers/com-create/com-create';
+
+import { ComCreateProvider } from '../providers/com-create/com-create';
+
 
 @NgModule({
   declarations: [
@@ -54,8 +62,10 @@ import {ProfileProvider} from '../providers/profile/profile';
     UpdatePage,
     SearchPage,
     SearchNavigatePage,
-    ProfilePage
-    //ComCreatePage
+    ProfilePage,
+    ComCreatePage
+
+    
   ],
   imports: [
     BrowserModule,
@@ -78,8 +88,11 @@ import {ProfileProvider} from '../providers/profile/profile';
     UpdatePage,
     SearchPage,
     SearchNavigatePage,
-    ProfilePage
-    //ComCreatePage
+
+    ProfilePage,
+    ComCreatePage
+
+    
   ],
   providers: [
     StatusBar,
@@ -97,8 +110,9 @@ import {ProfileProvider} from '../providers/profile/profile';
     SignupdataProvider,
     UpdateProvider,
     SearchdataProvider,
-    ProfileProvider
-    //ComCreateProvider
+     ProfileProvider,
+    ComCreateProvider
+
   ]
 })
 export class AppModule {}

@@ -1,0 +1,53 @@
+<!--
+  Generated template for the ComCreatePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title></ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="logout()" >
+        <ion-icon name="log-out" ></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-item>
+    <ion-label floating>Enter Community ID</ion-label>
+    <ion-input type="number" [(ngModel)]="com_id"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label floating>Enter Community Name</ion-label>
+    <ion-input type="text" [(ngModel)]="com_nm"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label floating>Enter Category ID</ion-label>
+    <ion-input type="number" [(ngModel)]="cat_id"></ion-input>
+  </ion-item>
+  
+  <ion-item>
+    <ion-label floating>Enter Community Description</ion-label>
+    <ion-input type="text" [(ngModel)]="com_desc"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label floating>Enter Image</ion-label>
+    <ion-input type="text" [(ngModel)]="img"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label floating>Enter Your Email id</ion-label>
+    <ion-input type="text" [(ngModel)]="u_email"></ion-input>
+  </ion-item>
+  <button ion-button color="primary" round full (click)="create()">Create Community</button>
+
+</ion-content>
