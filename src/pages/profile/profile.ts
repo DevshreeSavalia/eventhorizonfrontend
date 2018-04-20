@@ -1,9 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { comm_class } from '../mycommunities/comm_class';
-
-import {CommProvider} from '../../providers/comm/comm';
+import {pro_class} from '../profile/pro_class';
 import {ProfileProvider} from '../../providers/profile/profile';
+import { LoginPage } from '../login/login';
 
 /**
  * Generated class for the ProfilePage page.
@@ -19,26 +18,17 @@ import {ProfileProvider} from '../../providers/profile/profile';
 })
 export class ProfilePage {
 
-  c1:comm_class[]=[];
- p1:comm_class[]=[];
-  com_id:number;
-  com_name:string;
-  cid_fk:number;
-  comm_desc:string;
-  banner_img:string;
-  email_id:string;
-  email:string;
-
-
+  p1:pro_class[] = [];
+  email_id: string;
 
   constructor(public _pr:ProfileProvider,public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
-      this.email_id = localStorage.getItem("user_email");
-    console.log("ionViewDidLoad MycommunitiesPage");
-    this._pr.getName(this.email_id).subscribe(
-      (data: comm_class[]) => {
+    this.email_id = localStorage.getItem("user_email");
+    console.log("ionViewDidLoad MyProfilePage");
+    this._pr.getProfile(this.email_id).subscribe(
+      (data:pro_class[]) => {
       this.p1 = data;
       console.log(this.p1);
     });

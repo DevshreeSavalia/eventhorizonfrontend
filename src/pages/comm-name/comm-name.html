@@ -5,7 +5,7 @@
   Ionic pages and navigation.
 -->
 <ion-header>
-  <ion-navbar color="primary">
+  <ion-navbar color="secondary">
     <ion-title>
       <h4>Community Name</h4>
     </ion-title>
@@ -21,13 +21,13 @@
   <table>
     <thead>
       <tr>
-        <th>Description : </th>
+        <th></th>
       </tr>
     </thead>
     </table>
     <table>
       <tr *ngFor="let dataa of arr">
-        <td>{{dataa.comm_desc}}</td>
+        <td><b>{{dataa.comm_desc}}</b></td>
       </tr>
   </table>
 </ion-content>
@@ -36,7 +36,7 @@
 <ion-footer>
   <div padding>
     <ion-segment [(ngModel)]="evt">
-      <ion-segment-button value="upcoming">
+      <ion-segment-button value="upcoming" ion-color="secondary">
         UPCOMING
       </ion-segment-button>
       <ion-segment-button value="past">

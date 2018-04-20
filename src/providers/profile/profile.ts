@@ -16,7 +16,7 @@ export class ProfileProvider {
 
   url1:string="http://localhost:3000/pro_route/";
 
-   getName(id){
+   getProfile(id){
      return this.http.get(this.url1+id);
    }
 

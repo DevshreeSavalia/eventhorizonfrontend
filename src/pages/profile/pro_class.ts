@@ -1,13 +1,23 @@
-export class pro_class{
-
-public constructor(public email_id:string,
-public user_name:string,
-public mobile:number,
-public gender:string,
-public type:string,
-public password:string)
-{
-
-}
+export class pro_class {
+     constructor(
+        public email_id: string,
+        public user_name: string,
+        public mobile: number,
+        public gender: string,
+        public type: string,
+        public password: string,
+        public e_id: number,
+        public e_name: string,
+        public e_startdate: string,
+        public e_enddate: string,
+        public e_venue: string,
+        public comm_id_fk: number,
+        public e_desc: string,
+        public image: string,
+        public reg_id: number,
+        public e_id_fk: number,
+        public email_id_fk: string
+    ) 
+        {    }
 
 }
