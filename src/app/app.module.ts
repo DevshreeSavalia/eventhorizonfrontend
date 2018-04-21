@@ -41,7 +41,7 @@ import { SearchdataProvider } from '../providers/searchdata/searchdata';
 import { GeolocationProvider } from '../providers/geolocation/geolocation';
 
 import {ProfileProvider} from '../providers/profile/profile';
-//import { ComCreateProvider } from '../providers/com-create/com-create';
+import { FeedbackProvider} from '../providers/feedback/feedback';
 
 import { ComCreateProvider } from '../providers/com-create/com-create';
 
@@ -111,7 +111,8 @@ import { ComCreateProvider } from '../providers/com-create/com-create';
     UpdateProvider,
     SearchdataProvider,
      ProfileProvider,
-    ComCreateProvider
+    ComCreateProvider,
+    FeedbackProvider
 
   ]
 })
