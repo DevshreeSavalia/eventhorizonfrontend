@@ -20,7 +20,7 @@
 
 <ion-content padding>
 <ion-item *ngFor="let data of arr">
-  <ion-card>
+  <ion-card (click)="com_page(data.comm_id)" text-wrap>
     <ion-card-content >
       <img src="http://localhost:3000/images/user/{{data.banner_image}}" height="200px" width="250px">
      {{data.comm_name}}</ion-card-content>

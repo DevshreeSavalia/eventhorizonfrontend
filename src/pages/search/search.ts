@@ -32,8 +32,16 @@ export class SearchPage {
       (item: search[]) => {
       this.ar = item;
       this.item = this.ar;
+
     });
   }
+  com_page(id: number) {
+    this.navCtrl.push(SearchNavigatePage, {
+      id: id
+    });
+    console.log(id);
+  }
+
   initial() {
     this.item = this.ar;
   }
@@ -46,13 +54,6 @@ export class SearchPage {
         return dataa.c_name.toLowerCase().indexOf(data.toLowerCase()) > -1;
       });
     }
-  }
-
-  com_page(id: number) {
-    this.navCtrl.push(SearchNavigatePage, {
-      id: id
-    });
-    console.log(id);
   }
 
   logout() {

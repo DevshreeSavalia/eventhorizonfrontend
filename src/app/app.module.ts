@@ -39,11 +39,13 @@ import { SignupdataProvider } from '../providers/signupdata/signupdata';
 import { UpdateProvider } from '../providers/update/update';
 import { SearchdataProvider } from '../providers/searchdata/searchdata';
 import { GeolocationProvider } from '../providers/geolocation/geolocation';
-
-import {ProfileProvider} from '../providers/profile/profile';
-//import { ComCreateProvider } from '../providers/com-create/com-create';
-
+import { ProfileProvider } from '../providers/profile/profile';
 import { ComCreateProvider } from '../providers/com-create/com-create';
+import { FeedbackProvider } from '../providers/feedback/feedback';
+import { SearchProvider } from '../providers/search/search';
+import { CommRegProvider } from '../providers/comm-reg/comm-reg';
+import { UpSegMemProvider } from '../providers/up-seg-mem/up-seg-mem';
+import { PastSegMemProvider } from '../providers/past-seg-mem/past-seg-mem';
 
 
 @NgModule({
@@ -88,7 +90,6 @@ import { ComCreateProvider } from '../providers/com-create/com-create';
     UpdatePage,
     SearchPage,
     SearchNavigatePage,
-
     ProfilePage,
     ComCreatePage
 
@@ -110,8 +111,13 @@ import { ComCreateProvider } from '../providers/com-create/com-create';
     SignupdataProvider,
     UpdateProvider,
     SearchdataProvider,
-     ProfileProvider,
-    ComCreateProvider
+    ProfileProvider,
+    ComCreateProvider,
+    FeedbackProvider,
+    SearchProvider,
+    CommRegProvider,
+    UpSegMemProvider,
+    PastSegMemProvider
 
   ]
 })

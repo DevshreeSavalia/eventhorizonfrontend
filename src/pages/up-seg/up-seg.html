@@ -27,7 +27,6 @@
 <ion-item *ngFor="let dataa of ar">
 <ion-card>
   <ion-card-content>
-        
       <!-- <img src="http://localhost:3000/images/event/{{item.image}}" height="200px" width="250px" > -->
       Name: {{dataa.e_name}}</ion-card-content>
       <ion-card-content>Start Date: {{dataa.e_startdate}}
@@ -37,6 +36,13 @@
     <ion-card-content>
         Venue: {{dataa.e_venue}}
     </ion-card-content>
+  </ion-card>
+</ion-item>
+
+<ion-label>GOING...</ion-label>
+<ion-item *ngFor="let dt of arr">
+  <ion-card>
+    <ion-card-content>{{dt.user_name}}</ion-card-content>
   </ion-card>
 </ion-item>
 </ion-content>

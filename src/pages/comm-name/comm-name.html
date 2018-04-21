@@ -9,7 +9,12 @@
     <ion-title>
       <h4>Community Name</h4>
     </ion-title>
-    <ion-buttons end>
+    <ion-buttons end (click)="join()">
+      <button ion-button icon-only>
+        <ion-icon name="add-circle"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-buttons end (click)="logout()">
       <button ion-button icon-only>
         <ion-icon name="log-out"></ion-icon>
       </button>

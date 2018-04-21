@@ -4,6 +4,9 @@ import { up_seg_class } from "./up_seg_class";
 import { UpcomSegDataProvider } from "../../providers/upcom-seg-data/upcom-seg-data";
 import { GeolocationProvider } from "../../providers/geolocation/geolocation";
 import { LoginPage } from '../login/login';
+import { UpSegMemProvider } from '../../providers/up-seg-mem/up-seg-mem';
+import { upcomm_class } from "../upcomingevt/upcom_class";
+import { up_mem } from './up_mem_class';
 
 declare var google;
 
@@ -28,8 +31,10 @@ export class UpSegPage {
   date: string;
   venue: string;
   id: number;
+  arr:up_mem[]=[];
   constructor(
     public _upseg: UpcomSegDataProvider,
+    public up_member:UpSegMemProvider,
     public navCtrl: NavController,
     public navParams: NavParams,
     public geolocation: GeolocationProvider
@@ -45,6 +50,12 @@ export class UpSegPage {
       console.log(this.ar);
       this.geo_code(this.ar[0].e_venue);
     }); 
+    this.up_member.getUpMemb(this.id).subscribe(
+      (dt:up_mem[])=>{
+        this.arr=dt;
+        console.log(this.arr);
+      }
+    );
   }
 geo_code(address:string){
   console.log("inside geo_code");

@@ -1,4 +1,4 @@
-export class up_seg_class{
+export class past_mem{
     public constructor(
         public e_id:number,
         public e_name:string,
@@ -8,13 +8,17 @@ export class up_seg_class{
         public comm_id_fk:number,
         public e_desc:string,
         public image:string,
+        
+        public email_id: string,
+        public user_name: string,
+        public mobile:number,
+        public gender:string,
+        public type:string,
+        public password:string,
 
-        public comm_id:number,
-        public comm_name:string,
-        public c_id_fk:number,
-        public comm_desc:string,
-        public banner_image:string,
-        public email_id_fk:string
+        public reg_id:number,
+        public e_id_fk:number,
+
     )
         {  }
     

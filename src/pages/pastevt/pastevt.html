@@ -37,6 +37,14 @@
       </ion-card>
     </ion-item>
 
+    <ion-label>PARTICIPANTS</ion-label>
+    <ion-item *ngFor="let dt of arr">
+      <ion-card>
+        <ion-card-content>{{dt.user_name}}</ion-card-content>
+      </ion-card>
+    </ion-item>
+
+
   <br><br>
   <ion-label>Comments/Feedback..</ion-label>
   <ion-item *ngFor="let dt of f">

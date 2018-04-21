@@ -5,7 +5,8 @@ import { PastSegDataProvider } from '../../providers/past-seg-data/past-seg-data
 import { LoginPage } from '../login/login';
 import { FeedbackProvider } from '../../providers/feedback/feedback';
 import { feedbk } from './feedback_class';
-
+import { past_mem } from './past_mem';
+import { PastSegMemProvider } from '../../providers/past-seg-mem/past-seg-mem';
 
 /**
  * Generated class for the PastevtPage page.
@@ -27,11 +28,15 @@ export class PastevtPage {
   fbk:feedbk;
   f:feedbk[]=[];
   f_id:number;
-  constructor(public feedbk:FeedbackProvider,public _past_data:PastSegDataProvider,public navCtrl: NavController, public navParams: NavParams) {
+  arr:past_mem[]=[];
+  constructor(public feedbk:FeedbackProvider,
+    public past_member:PastSegMemProvider,
+    public _past_data:PastSegDataProvider,public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
     this.id=this.navParams.get('id');
+    console.log(this.id);
     console.log('ionViewDidLoad PastevtPage');
     this.email=localStorage.getItem("user_email");
     this._past_data.getPastSegment(this.id).subscribe(
@@ -40,6 +45,14 @@ export class PastevtPage {
         this.ar=data;
       }
     );
+
+    this.past_member.getPastMemb(this.id).subscribe(
+      (dt:past_mem[])=>{
+        this.arr=dt;
+        console.log(this.arr);
+      }
+    );
+
     this.feedbk.getFeedbackById(this.id).subscribe(
         (dt:feedbk[])=>{
           this.f=dt;
@@ -52,7 +65,6 @@ export class PastevtPage {
     this.feedbk.addFeedback(this.fbk).subscribe(
       (date:any)=>{
         console.log(this.f_id);
-        console.log(date);
       }
     );
   }

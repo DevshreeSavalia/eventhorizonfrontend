@@ -2,18 +2,19 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 /*
-  Generated class for the SearchdataProvider provider.
+  Generated class for the SearchProvider provider.
 
   See https://angular.io/guide/dependency-injection for more info on providers
   and Angular DI.
 */
 @Injectable()
-export class SearchdataProvider {
-  url:string="http://localhost:3000/cat_route/";
+export class SearchProvider {
+  url:string="http://localhost:3000/sea_route/";
   constructor(public http: HttpClient) {
-    console.log('Hello SearchdataProvider Provider');
+    console.log('Hello SearchProvider Provider');
   }
-  getAllCategory(){
-    return this.http.get(this.url);
+  getSearch(id){
+    return this.http.get(this.url+id);
   }
+
 }

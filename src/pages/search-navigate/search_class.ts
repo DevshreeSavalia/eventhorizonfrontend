@@ -8,6 +8,9 @@ export class search_dt {
     public c_id_fk: number,
     public comm_desc: string,
     public banner_image: string,
-    public email_id_fk: string
+    public email_id_fk: string,
+
+    public comm_reg_id:number,
+    public comm_id_fk: number
   ) {}
 }
