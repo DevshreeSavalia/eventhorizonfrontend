@@ -18,6 +18,6 @@ export class LoginProvider {
 
   checkuser(user){
     let body=JSON.stringify(user);
-   return  this.http.post(this.url,body,{headers:new HttpHeaders().set("Content-Type","application/json")});
+   return  this.http.post(this.url,body,{headers:new HttpHeaders().set('Content-Type','application/json')});
   }
 }

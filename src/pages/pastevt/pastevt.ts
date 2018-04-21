@@ -3,6 +3,9 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { past_seg_class } from './past_seg_class';
 import { PastSegDataProvider } from '../../providers/past-seg-data/past-seg-data';
 import { LoginPage } from '../login/login';
+import { FeedbackProvider } from '../../providers/feedback/feedback';
+import { feedbk } from './feedback_class';
+
 
 /**
  * Generated class for the PastevtPage page.
@@ -18,18 +21,38 @@ import { LoginPage } from '../login/login';
 })
 export class PastevtPage {
   ar:past_seg_class[]=[];
-  email_id:string;
+  email:string;
   id:number;
-  constructor(public _past_data:PastSegDataProvider,public navCtrl: NavController, public navParams: NavParams) {
+  desc:string;
+  fbk:feedbk;
+  f:feedbk[]=[];
+  f_id:number;
+  constructor(public feedbk:FeedbackProvider,public _past_data:PastSegDataProvider,public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
     this.id=this.navParams.get('id');
     console.log('ionViewDidLoad PastevtPage');
+    this.email=localStorage.getItem("user_email");
     this._past_data.getPastSegment(this.id).subscribe(
       (data:past_seg_class[])=>{
         console.log(this.ar);
         this.ar=data;
+      }
+    );
+    this.feedbk.getFeedbackById(this.id).subscribe(
+        (dt:feedbk[])=>{
+          this.f=dt;
+        }    
+      );
+  }
+
+  add(){
+    this.fbk=new feedbk(null,this.desc,this.id,this.email);
+    this.feedbk.addFeedback(this.fbk).subscribe(
+      (date:any)=>{
+        console.log(this.f_id);
+        console.log(date);
       }
     );
   }

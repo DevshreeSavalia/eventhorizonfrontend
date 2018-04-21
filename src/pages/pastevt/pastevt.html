@@ -39,12 +39,17 @@
 
   <br><br>
   <ion-label>Comments/Feedback..</ion-label>
+  <ion-item *ngFor="let dt of f">
+  <ion-card >
+    <ion-card-content>{{dt.f_title}}</ion-card-content>
+        </ion-card>
+      </ion-item>
   <ion-list>
       <ion-item>
-        <ion-input type="text" placeholder="add a comment..."></ion-input>
+        <ion-input type="text" placeholder="add a comment..." [(ngModel)]="desc"></ion-input>
       </ion-item>
         <ion-buttons end>
-        <button ion-button icon-only small >
+        <button ion-button icon-only small (click)="add()">
             <ion-icon name="checkbox-outline" ></ion-icon>
         </button>
       </ion-buttons>

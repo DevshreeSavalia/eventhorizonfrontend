@@ -17,7 +17,7 @@ import { UpdateProvider } from '../../providers/update/update';
   templateUrl: 'update.html',
 })
 export class UpdatePage {
-  ar:updt_user;
+  updt:updt_user;
   email:string;
   unm:string;
   gender:string;
@@ -31,12 +31,12 @@ export class UpdatePage {
     this.email=localStorage.getItem("user_email"); 
   }
 
-  update(){
-    this.ar=new updt_user(this.email,this.unm,(+this.mobile),this.gender,this.passwd);
-    this.updata.updateUser(this.email,this.ar).subscribe(
+  update(email){
+    this.updt=new updt_user(this.email,this.unm,(+this.mobile),this.gender,this.passwd);
+    this.updata.updateUser(this.email,this.updt).subscribe(
       ()=>{
         alert("updated...");
-        console.log(this.ar);
+        console.log(this.updt);
       }
     );
   }

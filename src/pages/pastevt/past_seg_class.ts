@@ -14,9 +14,12 @@ export class past_seg_class{
         public c_id_fk:number,
         public comm_desc:string,
         public banner_image:string,
-        public email_id_fk:string
+        public email_id_fk:string,
 
-
+        public f_id:number,
+        public f_title:string,
+        public e_id_fk:number,
+        public f_date:string      
 
     )
         {  }
