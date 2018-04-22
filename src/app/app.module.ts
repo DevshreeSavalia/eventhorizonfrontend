@@ -46,6 +46,7 @@ import { SearchProvider } from '../providers/search/search';
 import { CommRegProvider } from '../providers/comm-reg/comm-reg';
 import { UpSegMemProvider } from '../providers/up-seg-mem/up-seg-mem';
 import { PastSegMemProvider } from '../providers/past-seg-mem/past-seg-mem';
+import { EvtRegProvider } from '../providers/evt-reg/evt-reg';
 
 
 @NgModule({
@@ -117,7 +118,8 @@ import { PastSegMemProvider } from '../providers/past-seg-mem/past-seg-mem';
     SearchProvider,
     CommRegProvider,
     UpSegMemProvider,
-    PastSegMemProvider
+    PastSegMemProvider,
+    EvtRegProvider
 
   ]
 })

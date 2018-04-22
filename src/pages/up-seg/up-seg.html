@@ -36,10 +36,14 @@
     <ion-card-content>
         Venue: {{dataa.e_venue}}
     </ion-card-content>
+    <ion-buttons end (click)="joinevt()">
+      <button ion-button icon-only small>
+        <ion-icon name="add"></ion-icon>
+      </button>
+    </ion-buttons>
   </ion-card>
 </ion-item>
 
-<ion-label>GOING...</ion-label>
 <ion-item *ngFor="let dt of arr">
   <ion-card>
     <ion-card-content>{{dt.user_name}}</ion-card-content>

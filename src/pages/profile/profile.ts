@@ -1,7 +1,10 @@
 import { Component } from '@angular/core';
+// import { MenuController } from 'ionic-angular';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import {pro_class} from '../profile/pro_class';
-import {ProfileProvider} from '../../providers/profile/profile';
+import { pro_class } from '../profile/pro_class';
+import { ProfileProvider } from '../../providers/profile/profile';
+import { UpdatePage } from '../update/update';
+import { updt_user } from '../update/update_class';
 import { LoginPage } from '../login/login';
 
 /**
@@ -18,28 +21,30 @@ import { LoginPage } from '../login/login';
 })
 export class ProfilePage {
 
-  p1:pro_class[] = [];
-  email_id: string;
+  p1: pro_class[] = [];
+  email: string;
 
-  constructor(public _pr:ProfileProvider,public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public _pr: ProfileProvider, public navCtrl: NavController,
+   public navParams: NavParams,
+    // public menucttl:MenuController
+  ) {
   }
 
   ionViewDidLoad() {
-    this.email_id = localStorage.getItem("user_email");
+    this.email = localStorage.getItem("user_email");
     console.log("ionViewDidLoad MyProfilePage");
-    this._pr.getProfile(this.email_id).subscribe(
-      (data:pro_class[]) => {
-      this.p1 = data;
-      console.log(this.p1);
-    });
+    this._pr.getProfile(this.email).subscribe(
+      (data: pro_class[]) => {
+        this.p1 = data;
+        console.log(this.p1);
+      });
+  }
+  logout() {
+    this.navCtrl.parent.parent.setRoot(LoginPage);
+  }
 
-  //   this.email=localStorage.getItem("user_email");
-   
-  //   this._pr.getName(this.email).subscribe(
-  //   (dat:comm_class[])=>{
-  //     this.p1=dat;    
-  //   }
-  //  );
-}
+  update_user(email){
+    this.navCtrl.push(UpdatePage,{email:email}); 
+  }
 
 }

@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { LoginPage } from '../login/login';
 import { updt_user } from '../update/update_class';
 import { UpdateProvider } from '../../providers/update/update';
+import { NullAstVisitor } from '@angular/compiler';
 
 /**
  * Generated class for the UpdatePage page.
@@ -28,11 +29,10 @@ export class UpdatePage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad UpdatePage');
-    this.email=localStorage.getItem("user_email"); 
   }
 
   update(email){
-    this.updt=new updt_user(this.email,this.unm,(+this.mobile),this.gender,this.passwd);
+    this.updt=new updt_user(null,this.unm,(+this.mobile),this.gender,this.passwd);
     this.updata.updateUser(this.email,this.updt).subscribe(
       ()=>{
         alert("updated...");

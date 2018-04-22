@@ -8,6 +8,11 @@
 
   <ion-navbar>
     <ion-title>profile</ion-title>
+    <ion-buttons end>
+        <button ion-button icon-only (click)="logout()" >
+          <ion-icon name="log-out" ></ion-icon>
+        </button>
+      </ion-buttons>
   </ion-navbar>
 
 </ion-header>
@@ -16,19 +21,17 @@
 
 
 <ion-content padding>
-
-<!-- <ion-item *ngFor="let item of p1">
-<label>{{item.user_name}}</label><br><br>
-<label>{{item.mobile}}</label>
-</ion-item> -->
-
-
 <ion-item *ngFor="let item of p1">
 <ion-card>
   <ion-card-content>Name: {{item.user_name}}</ion-card-content>
-  <ion-card-content>Name: {{item.mobile}}</ion-card-content>
-  <ion-card-content>Name: {{item.gender}}</ion-card-content>
-  <ion-card-content>Name: {{item.e_name}}</ion-card-content>
+  <ion-card-content>Mobile: {{item.mobile}}</ion-card-content>
+  <ion-card-content>Gender: {{item.gender}}</ion-card-content>
+  <ion-card-content>Community Name: {{item.e_name}}</ion-card-content>  
+  <ion-buttons end>
+      <button ion-button icon-only (click)="update_user(item.email_id)" small>
+        <ion-icon name="create" ></ion-icon>
+      </button>
+    </ion-buttons>
 </ion-card>
 </ion-item>
 
