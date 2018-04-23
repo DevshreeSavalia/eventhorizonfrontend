@@ -26,8 +26,7 @@
 
 <ion-content class="search">
   <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
-  <ion-item *ngFor="let i of item">
-    <a href (click)="com_page(i.c_id)">{{i.c_name}}</a>
-    <!-- <button (click)="com_page(i.c_id)">{{i.c_name}}</button> -->
+  <ion-item *ngFor="let i of item"> 
+    <button ion-item (click)="com_page(i.c_id)"><b>{{i.c_name}}</b></button>
     </ion-item>
 </ion-content>

@@ -60,10 +60,12 @@
     <ion-input type="text" [(ngModel)]="img"></ion-input>
   </ion-item>
 
-  <!-- <ion-item>
-    <ion-label floating><b>Enter Your Email id</b></ion-label>
-    <ion-input type="text" [(ngModel)]="u_email"></ion-input>
-  </ion-item> -->
+  <ion-buttons end>
+    <button ion-button icon-only small (click)="add()">
+        <ion-icon name="cloud-upload"></ion-icon>
+    </button>
+  </ion-buttons>
+
   <button ion-button color="primary" round full (click)="create()"><b>Create Community</b></button>
 
 </ion-content>

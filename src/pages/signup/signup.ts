@@ -22,7 +22,6 @@ export class SignupPage {
   uname:string;
   mobile:number;
   gender:string;
-  type:string;
   password:string;
   sign:signup[]=[];
   signdt:signup;
@@ -36,7 +35,7 @@ export class SignupPage {
   }
 
   adduser(){
-    this.signdt=new signup(this.email,this.uname,(+this.mobile),this.gender,this.type,this.password);
+    this.signdt=new signup(this.email,this.uname,(+this.mobile),this.gender,this.password);
     console.log("signed up..",this.signdt);
       var val = Math.floor(1000 + Math.random() * 9000);
       this.token=val.toString();
