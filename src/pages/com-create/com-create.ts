@@ -30,9 +30,11 @@ export class ComCreatePage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ComCreatePage');
+    this.u_email=localStorage.getItem("user_email");
+    console.log("email:"+this.u_email);
   }
 
-  create(){
+  create(){ 
     this.cm_create=new comm_class((+this.com_id),this.com_nm,(+this.cat_id),this.com_desc,this.img,this.u_email);
     this.com_create.addCommunity(this.cm_create).subscribe(
     (dt:any)=>{

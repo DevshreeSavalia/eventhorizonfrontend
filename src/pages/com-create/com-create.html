@@ -36,9 +36,20 @@
 
   <ion-item>
     <ion-label floating><b>Enter Category ID</b></ion-label>
-    <ion-input type="number" [(ngModel)]="cat_id"></ion-input>
-  </ion-item>
-  
+    <ion-select [(ngModel)]="cat_id">
+        <ion-option value="1"><b>1</b></ion-option>
+        <ion-option value="2"><b>2</b></ion-option>
+        <ion-option value="3"><b>3</b></ion-option>
+        <ion-option value="4"><b>4</b></ion-option>
+        <ion-option value="5"><b>5</b></ion-option>
+        <ion-option value="6"><b>6</b></ion-option>
+        <ion-option value="7"><b>7</b></ion-option>
+        <ion-option value="8"><b>8</b></ion-option>
+        <ion-option value="9"><b>9</b></ion-option>
+        <ion-option value="10"><b>10</b></ion-option>
+      </ion-select>
+    </ion-item>
+
   <ion-item>
     <ion-label floating><b>Enter Community Description</b></ion-label>
     <ion-input type="text" [(ngModel)]="com_desc"></ion-input>
@@ -49,10 +60,10 @@
     <ion-input type="text" [(ngModel)]="img"></ion-input>
   </ion-item>
 
-  <ion-item>
+  <!-- <ion-item>
     <ion-label floating><b>Enter Your Email id</b></ion-label>
     <ion-input type="text" [(ngModel)]="u_email"></ion-input>
-  </ion-item>
+  </ion-item> -->
   <button ion-button color="primary" round full (click)="create()"><b>Create Community</b></button>
 
 </ion-content>
