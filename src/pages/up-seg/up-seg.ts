@@ -56,6 +56,7 @@ export class UpSegPage {
       this.ar = item;
       console.log(this.ar);
       this.geo_code(this.ar[0].e_venue);
+      console.log("add:"+this.ar[0].e_venue);
     }); 
     this.up_member.getUpMemb(this.id).subscribe(
       (dt:up_mem[])=>{
@@ -76,13 +77,12 @@ export class UpSegPage {
     );
   }
 
-
-
 geo_code(address:string){
-  console.log("inside geo_code");
+  console.log("inside geo_code::");
   this.geolocation.getCurrentPosition(address).subscribe(
     (data:any)=>{
       this.loadMap(data);
+      console.log("add:"+data);
     }
   );
 }
@@ -90,7 +90,7 @@ geo_code(address:string){
     let lat=data["results"][0].geometry.location.lat;
     let lng=data["results"][0].geometry.location.lng;
     let latLng = new google.maps.LatLng(lat, lng);
-
+    console.log("lat:"+lat);
     let mapOptions = {
       center: latLng,
       zoom: 16,
