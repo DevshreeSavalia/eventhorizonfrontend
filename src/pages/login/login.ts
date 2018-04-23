@@ -18,8 +18,8 @@ import { SignupPage } from "../signup/signup";
   templateUrl: "login.html"
 })
 export class LoginPage {
-  email_id: string = "devshree456@gmail.com";
-  password: string = "devshree456";
+  email_id: string = "jaideepwarrior@yahoo.com";
+  password: string = "jaideep505";
   tmp:user_login[]=[];
 
   constructor(

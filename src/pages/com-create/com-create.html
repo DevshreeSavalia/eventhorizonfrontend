@@ -6,8 +6,13 @@
 -->
 <ion-header>
 
-  <ion-navbar>
+  <ion-navbar color="primary">
     <ion-title></ion-title>
+    <ion-buttons start>
+      <button ion-button icon-only menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
     <ion-buttons end>
       <button ion-button icon-only (click)="logout()" >
         <ion-icon name="log-out" ></ion-icon>
@@ -20,34 +25,34 @@
 
 <ion-content padding>
   <ion-item>
-    <ion-label floating>Enter Community ID</ion-label>
+    <ion-label floating><b>Enter Community ID</b></ion-label>
     <ion-input type="number" [(ngModel)]="com_id"></ion-input>
   </ion-item>
 
   <ion-item>
-    <ion-label floating>Enter Community Name</ion-label>
+    <ion-label floating><b>Enter Community Name</b></ion-label>
     <ion-input type="text" [(ngModel)]="com_nm"></ion-input>
   </ion-item>
 
   <ion-item>
-    <ion-label floating>Enter Category ID</ion-label>
+    <ion-label floating><b>Enter Category ID</b></ion-label>
     <ion-input type="number" [(ngModel)]="cat_id"></ion-input>
   </ion-item>
   
   <ion-item>
-    <ion-label floating>Enter Community Description</ion-label>
+    <ion-label floating><b>Enter Community Description</b></ion-label>
     <ion-input type="text" [(ngModel)]="com_desc"></ion-input>
   </ion-item>
 
   <ion-item>
-    <ion-label floating>Enter Image</ion-label>
+    <ion-label floating><b>Enter Image</b></ion-label>
     <ion-input type="text" [(ngModel)]="img"></ion-input>
   </ion-item>
 
   <ion-item>
-    <ion-label floating>Enter Your Email id</ion-label>
+    <ion-label floating><b>Enter Your Email id</b></ion-label>
     <ion-input type="text" [(ngModel)]="u_email"></ion-input>
   </ion-item>
-  <button ion-button color="primary" round full (click)="create()">Create Community</button>
+  <button ion-button color="primary" round full (click)="create()"><b>Create Community</b></button>
 
 </ion-content>

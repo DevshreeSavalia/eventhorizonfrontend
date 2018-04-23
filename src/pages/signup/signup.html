@@ -6,7 +6,7 @@
 -->
 <ion-header>
 
-  <ion-navbar hideBackButton="true">
+  <ion-navbar hideBackButton="true" color="primary">
     <ion-title><b>SIGNUP</b></ion-title>
   </ion-navbar>
 
@@ -51,13 +51,13 @@
       <ion-input type="password" [(ngModel)]="password"></ion-input>
     </ion-item> 
     
-    <br><br><button ion-button color="secondary" round small (click)="adduser()"><b>Get OTP</b></button>
+    <br><br><button ion-button color="primary" round small (click)="adduser()"><b>Get OTP</b></button>
     
     <ion-item>
       <ion-label floating><b>OTP</b></ion-label>
       <ion-input type="number" [(ngModel)]="tokenn"></ion-input>
     </ion-item> 
 
-    <br><button ion-button color="secondary" round full (click)="verify()">SIGN UP</button>
+    <br><button ion-button color="primary" round full (click)="verify()"><b>SIGN UP</b></button>
 </ion-list> 
 </ion-content>

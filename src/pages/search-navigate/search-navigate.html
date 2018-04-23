@@ -6,8 +6,13 @@
 -->
 <ion-header>
 
-  <ion-navbar >
+  <ion-navbar color="primary" >
     <ion-title></ion-title>
+    <ion-buttons start>
+      <button ion-button icon-only menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
     <ion-buttons end>
       <button ion-button icon-only (click)="logout()" >
         <ion-icon name="log-out" ></ion-icon>
@@ -22,8 +27,8 @@
 <ion-item *ngFor="let data of arr">
   <ion-card (click)="com_page(data.comm_id)" text-wrap>
     <ion-card-content >
-      <img src="http://localhost:3000/images/user/{{data.banner_image}}" height="200px" width="250px">
-     {{data.comm_name}}</ion-card-content>
+      <img src="http://localhost:3000/images/user/{{data.banner_image}}" height="200px" width="250px"><b>
+     {{data.comm_name}}</b></ion-card-content>
   </ion-card>
 </ion-item>
 </ion-content>

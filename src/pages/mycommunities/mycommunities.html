@@ -6,8 +6,13 @@
 -->
 <ion-header>
 
-  <ion-navbar color="secondary" >
-    <ion-title><b>MyCommunities</b></ion-title>
+  <ion-navbar color="primary" >
+    <ion-title><b></b></ion-title>
+    <ion-buttons start>
+      <button ion-button icon-only menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
     <ion-buttons end>
       <button ion-button icon-only (click)="logout()" >
         <ion-icon name="log-out" ></ion-icon>
@@ -23,8 +28,8 @@
 <ion-item *ngFor="let item of c1">
 <ion-card (click)="com_page(item.comm_id)" text-wrap>
   <ion-card-content >
-    <img src="http://localhost:3000/images/user/{{item.banner_image}}" height="200px" width="250px" >
-   {{item.comm_name}}</ion-card-content>
+    <img src="http://localhost:3000/images/user/{{item.banner_image}}" height="200px" width="250px" ><b>
+   {{item.comm_name}}</b></ion-card-content>
 </ion-card>
 </ion-item>
 </ion-content>

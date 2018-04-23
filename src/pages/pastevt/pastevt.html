@@ -14,6 +14,11 @@
         <ion-icon name="arrow-back"></ion-icon>
       </button>
     </ion-buttons> -->
+    <ion-buttons start>
+      <button ion-button icon-only menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
     <ion-buttons end>
       <button ion-button icon-only (click)="logout()" >
         <ion-icon name="log-out"></ion-icon>
@@ -24,20 +29,22 @@
 
 <ion-content padding >
   <ion-item *ngFor="let data of ar">
-    <ion-card >
-      <ion-card-content>Name: {{data.e_name}}</ion-card-content>
+    <ion-card  item-width="800%">
+      <ion-card-content><b>Name: {{data.e_name}}</b></ion-card-content>
           <ion-card-content>
-            Start Date: {{data.e_startdate}}
+            <b>Start Date: {{data.e_startdate}}</b>
           </ion-card-content>
-          <ion-card-content>End Date: {{data.e_enddate}}
-          </ion-card-content>
+          <ion-card-content><b>End Date: {{data.e_enddate}}
+          </b></ion-card-content>
         <ion-card-content>
-            Venue: {{data.e_venue}}
+            <b>Venue: {{data.e_venue}}</b>
         </ion-card-content>
       </ion-card>
     </ion-item>
 
-    
+
+    &nbsp;&nbsp;&nbsp;&nbsp;
+    <ion-label><b>Participants</b></ion-label>
     <ion-item *ngFor="let dt of arr">
       <ion-card>
         <ion-card-content>{{dt.user_name}}</ion-card-content>
@@ -46,7 +53,7 @@
 
 
   <br><br>
-  <ion-label>Comments/Feedback..</ion-label>
+  <ion-label><b>Comments/Feedback..</b></ion-label>
   <ion-item *ngFor="let dt of f">
   <ion-card >
     <ion-card-content>{{dt.f_title}}</ion-card-content>

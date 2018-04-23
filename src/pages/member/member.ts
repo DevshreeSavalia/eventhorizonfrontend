@@ -24,7 +24,7 @@ export class MemberPage {
 
   ionViewDidLoad() {
     this.id=this.navParams.get('id'); 
-    alert(this.id);
+   // alert(this.id);
     console.log('ionViewDidLoad MemberPage');
     this._memdata.getMembSegment(this.id).subscribe(
       (data:mem_class[])=>{

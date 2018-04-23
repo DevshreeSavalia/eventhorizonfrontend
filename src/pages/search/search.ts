@@ -5,6 +5,7 @@ import { search } from "./search_class";
 import { LoginPage } from "../login/login";
 import { SearchNavigatePage } from "../search-navigate/search-navigate";
 
+
 /**
  * Generated class for the SearchPage page.
  *
@@ -59,4 +60,6 @@ export class SearchPage {
   logout() {
     this.navCtrl.parent.parent.setRoot(LoginPage);
   }
+
+
 }

@@ -5,9 +5,9 @@
   Ionic pages and navigation.
 -->
 <ion-header>
-  <ion-navbar color="secondary">
+  <ion-navbar color="primary">
     <ion-title>
-      <h4>Community Name</h4>
+      <h4></h4>
     </ion-title>
     <ion-buttons end (click)="join()">
       <button ion-button icon-only>
@@ -32,7 +32,7 @@
     </table>
     <table>
       <tr *ngFor="let dataa of arr">
-        <td><b>{{dataa.comm_desc}}</b></td>
+        <td><b>&nbsp;&nbsp;&nbsp;{{dataa.comm_desc}}</b></td>
       </tr>
   </table>
 </ion-content>
@@ -41,14 +41,14 @@
 <ion-footer>
   <div padding>
     <ion-segment [(ngModel)]="evt">
-      <ion-segment-button value="upcoming" ion-color="secondary">
-        UPCOMING
+      <ion-segment-button value="upcoming" ion-color="primary">
+        <b>UPCOMING</b>
       </ion-segment-button>
-      <ion-segment-button value="past">
-        PAST
+      <ion-segment-button value="past" ion-color="primary">
+        <b>PAST</b>
       </ion-segment-button>
-      <ion-segment-button value="member">
-        MEMBERS
+      <ion-segment-button value="member" ion-color="primary">
+       <b> MEMBERS</b>
       </ion-segment-button>
     </ion-segment>
   </div>
