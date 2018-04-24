@@ -17,10 +17,7 @@ import { SignupPage } from '../pages/signup/signup';
 import { UpdatePage } from '../pages/update/update';
 import { SearchPage } from '../pages/search/search';
 import { SearchNavigatePage } from '../pages/search-navigate/search-navigate';
-
 import {ProfilePage} from '../pages/profile/profile';
-//import { ComCreatePage } from '../pages/com-create/com-create';
-
 import { ComCreatePage } from '../pages/com-create/com-create';
 
 
@@ -47,6 +44,8 @@ import { CommRegProvider } from '../providers/comm-reg/comm-reg';
 import { UpSegMemProvider } from '../providers/up-seg-mem/up-seg-mem';
 import { PastSegMemProvider } from '../providers/past-seg-mem/past-seg-mem';
 import { EvtRegProvider } from '../providers/evt-reg/evt-reg';
+import { UpSegIdProvider } from '../providers/up-seg-id/up-seg-id';
+import { PastSegIdProvider } from '../providers/past-seg-id/past-seg-id';
 
 
 @NgModule({
@@ -119,7 +118,9 @@ import { EvtRegProvider } from '../providers/evt-reg/evt-reg';
     CommRegProvider,
     UpSegMemProvider,
     PastSegMemProvider,
-    EvtRegProvider
+    EvtRegProvider,
+    UpSegIdProvider,
+    PastSegIdProvider
 
   ]
 })

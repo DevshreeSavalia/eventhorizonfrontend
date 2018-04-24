@@ -29,62 +29,56 @@
         <th></th>
       </tr>
     </thead>
-    </table>
-    <table>
-      <tr *ngFor="let dataa of arr">
-        <td><b>&nbsp;&nbsp;&nbsp;{{dataa.comm_desc}}</b></td>
-      </tr>
   </table>
-</ion-content>
+  <table>
+    <tr *ngFor="let dataa of arr">
+      <td>
+        <b>&nbsp;&nbsp;&nbsp;{{dataa.comm_desc}}</b>
+      </td>
+    </tr>
+  </table>
 
-
-<ion-footer>
   <div padding>
     <ion-segment [(ngModel)]="evt">
-      <ion-segment-button value="upcoming" ion-color="primary">
-        <b>UPCOMING</b>
+      <ion-segment-button value="upcm">
+        Upcoming
       </ion-segment-button>
-      <ion-segment-button value="past" ion-color="primary">
-        <b>PAST</b>
+      <ion-segment-button value="past">
+        Past
       </ion-segment-button>
-      <ion-segment-button value="member" ion-color="primary">
-       <b> MEMBERS</b>
+      <ion-segment-button value="member">
+        Member
       </ion-segment-button>
     </ion-segment>
   </div>
 
-
-  <ion-item *ngFor="let dataa of arr">
-  <div [ngSwitch]="evt" >
-    <ion-list *ngSwitchCase="'upcoming'" >
-      <ion-item *ngFor="let dataa of arr">
+  <div [ngSwitch]="evt">
+    <ion-list *ngSwitchCase="'upcm'">
+      <ion-item *ngFor="let dataa of ar">
         <ion-thumbnail item-start>
-          <img src="http://localhost:3000/images/user/{{dataa.banner_image}}">
+          <img src="http://localhost:3000/images/event/{{dataa.image}}">
         </ion-thumbnail>
-        <h2>
-          <button (click)="up(dataa.comm_id)"></button>
-        </h2>
+        <h2 (click)="up(dataa.e_id)" text-wrap><b>{{dataa.e_name}}</b></h2>
       </ion-item>
     </ion-list>
 
     <ion-list *ngSwitchCase="'past'">
-      <ion-item >
+      <ion-item *ngFor="let dataa of past_ar">
         <ion-thumbnail item-start>
-          <img src="http://localhost:3000/images/user/{{dataa.banner_image}}">
+          <img src="http://localhost:3000/images/event/{{dataa.image}}">
         </ion-thumbnail>
-          <button (click)="past(dataa.comm_id)"></button>
-        
+        <h2 (click)="past(dataa.e_id)" text-wrap><b>{{dataa.e_name}}</b></h2>
       </ion-item>
     </ion-list>
 
     <ion-list *ngSwitchCase="'member'">
-      <ion-item>
+      <ion-item *ngFor="let dataa of mem_ar">
         <ion-thumbnail item-start>
-          <img src="http://localhost:3000/images/user/{{dataa.banner_image}}">
+          <!-- <img src="http://localhost:3000/images/event/{{dataa.image}}"> -->
         </ion-thumbnail>
-        <h2><button (click)="member(dataa.comm_id)"></button></h2>
+        <h2><b>{{dataa.user_name}}</b></h2>
       </ion-item>
     </ion-list>
   </div>
-  </ion-item>
-</ion-footer>
+
+</ion-content>

@@ -1,11 +1,10 @@
 import { Component, ViewChild, ElementRef } from "@angular/core";
 import { IonicPage, NavController, NavParams } from "ionic-angular";
 import { up_seg_class } from "./up_seg_class";
-import { UpcomSegDataProvider } from "../../providers/upcom-seg-data/upcom-seg-data";
+import { UpSegIdProvider } from "../../providers/up-seg-id/up-seg-id";
 import { GeolocationProvider } from "../../providers/geolocation/geolocation";
 import { LoginPage } from '../login/login';
 import { UpSegMemProvider } from '../../providers/up-seg-mem/up-seg-mem';
-import { upcomm_class } from "../upcomingevt/upcom_class";
 import { up_mem } from './up_mem_class';
 import { evt_reg } from './evt_reg_class';
 import { EvtRegProvider } from '../../providers/evt-reg/evt-reg';
@@ -37,7 +36,7 @@ export class UpSegPage {
   reg:evt_reg;
   e_reg:evt_reg[]=[];
   constructor(
-    public _upseg: UpcomSegDataProvider,
+    public _upseg: UpSegIdProvider,
     public up_member:UpSegMemProvider,
     public register:EvtRegProvider,
     public navCtrl: NavController,
@@ -47,16 +46,15 @@ export class UpSegPage {
 
   ionViewDidLoad() {
     this.id = this.navParams.get("id");
-    console.log("event"+this.id);
+    console.log("event:"+this.id);
     this.email=localStorage.getItem("user_email");
     console.log(this.email);
     console.log("ionViewDidLoad UpSegPage");
-    this._upseg.getUpSegment(this.id).subscribe(
+    this._upseg.getUpSegmentById(this.id).subscribe(
       (item: up_seg_class[]) => {
       this.ar = item;
       console.log(this.ar);
       this.geo_code(this.ar[0].e_venue);
-      console.log("add:"+this.ar[0].e_venue);
     }); 
     this.up_member.getUpMemb(this.id).subscribe(
       (dt:up_mem[])=>{
