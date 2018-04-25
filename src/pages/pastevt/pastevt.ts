@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { past_seg_class } from './past_seg_class';
-import { PastSegDataProvider } from '../../providers/past-seg-data/past-seg-data';
+import { PastSegIdProvider } from '../../providers/past-seg-id/past-seg-id';
 import { LoginPage } from '../login/login';
 import { FeedbackProvider } from '../../providers/feedback/feedback';
 import { feedbk } from './feedback_class';
@@ -31,7 +31,7 @@ export class PastevtPage {
   arr:past_mem[]=[];
   constructor(public feedbk:FeedbackProvider,
     public past_member:PastSegMemProvider,
-    public _past_data:PastSegDataProvider,public navCtrl: NavController, public navParams: NavParams) {
+    public _past_data:PastSegIdProvider,public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
@@ -39,7 +39,7 @@ export class PastevtPage {
     console.log(this.id);
     console.log('ionViewDidLoad PastevtPage');
     this.email=localStorage.getItem("user_email");
-    this._past_data.getPastSegment(this.id).subscribe(
+    this._past_data.getUpPastById(this.id).subscribe(
       (data:past_seg_class[])=>{
         console.log(this.ar);
         this.ar=data;
