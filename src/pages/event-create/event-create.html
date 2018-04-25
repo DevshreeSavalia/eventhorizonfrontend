@@ -1,0 +1,89 @@
+<!--
+  Generated template for the EventCreatePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title></ion-title>
+    <ion-buttons start>
+      <button ion-button icon-only menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="logout()">
+        <ion-icon name="log-out"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-item>
+    <ion-label floating><b>Enter Event ID</b></ion-label>
+    <ion-input type="number" [(ngModel)]="event_id"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label floating><b>Enter Event Name</b></ion-label>
+    <ion-input type="text" [(ngModel)]="event_name"></ion-input>
+  </ion-item>
+
+<ion-item>
+ <ion-label floating><b>Start Date</b></ion-label>
+  <ion-datetime displayFormat="YYYY/MM/DD" [(ngModel)]="event_startdate"></ion-datetime>
+</ion-item>
+
+  <ion-item>
+      <ion-label floating><b>End Date</b></ion-label>
+      <ion-datetime displayFormat="YYYY/MM/DD" [(ngModel)]="event_enddate"></ion-datetime>
+    </ion-item>
+
+  <ion-item>
+    <ion-label floating><b>Enter Event Venue</b></ion-label>
+    <ion-input type="text" [(ngModel)]="event_venue"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label floating><b>Enter Community Id</b></ion-label>
+     <ion-select [(ngModel)]="com_id">
+        <ion-option value="1"><b>1</b></ion-option>
+        <ion-option value="2"><b>2</b></ion-option>
+        <ion-option value="3"><b>3</b></ion-option>
+        <ion-option value="4"><b>4</b></ion-option>
+        <ion-option value="5"><b>5</b></ion-option>
+        <ion-option value="6"><b>6</b></ion-option>
+        <ion-option value="7"><b>7</b></ion-option>
+        <ion-option value="8"><b>8</b></ion-option>
+        <ion-option value="9"><b>9</b></ion-option>
+        <ion-option value="10"><b>10</b></ion-option>
+      </ion-select>
+  </ion-item>  
+  
+  <ion-item>
+    <ion-label floating><b>Enter Event Description</b></ion-label>
+    <ion-input type="text" [(ngModel)]="event_desc"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label floating><b>Enter Image</b></ion-label>
+    <ion-input type="text" [(ngModel)]="img"></ion-input>
+  </ion-item>
+
+  <ion-buttons end>
+    <button ion-button icon-only small (click)="uploading()">
+      <ion-icon name="cloud-upload"></ion-icon>
+    </button>
+  </ion-buttons>
+  
+  <input type="file" name="file[]" (change)="processWebImage($event)" />
+  <button ion-button color="primary" round full (click)="create()">
+    <b>Create Event</b>
+  </button>
+
+</ion-content>

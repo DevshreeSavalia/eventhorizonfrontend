@@ -19,6 +19,7 @@ import { SearchPage } from '../pages/search/search';
 import { SearchNavigatePage } from '../pages/search-navigate/search-navigate';
 import {ProfilePage} from '../pages/profile/profile';
 import { ComCreatePage } from '../pages/com-create/com-create';
+import { EventCreatePage } from '../pages/event-create/event-create';
 
 
 
@@ -38,6 +39,7 @@ import { SearchdataProvider } from '../providers/searchdata/searchdata';
 import { GeolocationProvider } from '../providers/geolocation/geolocation';
 import {ProfileProvider} from '../providers/profile/profile';
 import { ComCreateProvider } from '../providers/com-create/com-create';
+import { EventCreateProvider } from '../providers/event-create/event-create';
 import { FeedbackProvider } from '../providers/feedback/feedback';
 import { SearchProvider } from '../providers/search/search';
 import { CommRegProvider } from '../providers/comm-reg/comm-reg';
@@ -65,8 +67,8 @@ import { PastSegIdProvider } from '../providers/past-seg-id/past-seg-id';
     SearchPage,
     SearchNavigatePage,
     ProfilePage,
-    ComCreatePage
-
+    ComCreatePage,
+    EventCreatePage
     
   ],
   imports: [
@@ -91,8 +93,8 @@ import { PastSegIdProvider } from '../providers/past-seg-id/past-seg-id';
     SearchPage,
     SearchNavigatePage,
     ProfilePage,
-    ComCreatePage
-
+    ComCreatePage,
+    EventCreatePage
     
   ],
   providers: [
@@ -113,6 +115,7 @@ import { PastSegIdProvider } from '../providers/past-seg-id/past-seg-id';
     SearchdataProvider,
     ProfileProvider,
     ComCreateProvider,
+    EventCreateProvider,
     FeedbackProvider,
     SearchProvider,
     CommRegProvider,
