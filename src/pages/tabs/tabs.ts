@@ -6,6 +6,7 @@ import { UpcomingevtPage } from '../upcomingevt/upcomingevt';
 import { MycommunitiesPage} from '../mycommunities/mycommunities';
 import { SearchPage } from '../search/search';
 import { ComCreatePage } from '../com-create/com-create';
+import { EventCreatePage } from '../event-create/event-create';
 import {ProfilePage} from '../profile/profile';
 
 @Component({
@@ -17,6 +18,7 @@ export class TabsPage {
   tab2Root= UpcomingevtPage;
   tab3Root =  MycommunitiesPage;
   tab4Root = ComCreatePage;
+  tab5Root =  EventCreatePage;
   tab6Root = ProfilePage;
   constructor() {
 

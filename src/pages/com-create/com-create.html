@@ -39,9 +39,7 @@
   </ion-item>
 
   <ion-item>
-    <ion-label floating>
-      <b>Enter Category ID</b>
-    </ion-label>
+    <ion-label floating><b>Enter Category ID</b></ion-label>
     <ion-select [(ngModel)]="cat_id">
       <ion-option value="1">
         <b>Technology</b>
@@ -91,7 +89,7 @@
   </ion-item>
 
   <ion-buttons end>
-    <button ion-button icon-only small (click)="uploadimg()">
+    <button ion-button icon-only small (click)="uploading()">
       <ion-icon name="cloud-upload"></ion-icon>
     </button>
   </ion-buttons>
