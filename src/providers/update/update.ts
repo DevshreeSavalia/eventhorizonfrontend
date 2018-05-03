@@ -18,6 +18,6 @@ export class UpdateProvider {
   updateUser(email,updt){
     let body=JSON.stringify(updt);
     console.log(body);
-    return this.http.put(this.url,body,{headers:new HttpHeaders().set('Content-type','application/json')});
+    return this.http.put(this.url+email,body,{headers:new HttpHeaders().set('Content-type','application/json')});
   }
 }

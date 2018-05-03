@@ -4,6 +4,7 @@ import { LoginPage } from '../login/login';
 import { updt_user } from '../update/update_class';
 import { UpdateProvider } from '../../providers/update/update';
 import { NullAstVisitor } from '@angular/compiler';
+import { ProfilePage } from '../profile/profile';
 
 /**
  * Generated class for the UpdatePage page.
@@ -31,11 +32,14 @@ export class UpdatePage {
     console.log('ionViewDidLoad UpdatePage');
   }
 
-  update(email){
+  update(){
+    this.email=localStorage.getItem("user_email");
+    console.log(this.email);
     this.updt=new updt_user(null,this.unm,(+this.mobile),this.gender,this.passwd);
     this.updata.updateUser(this.email,this.updt).subscribe(
       ()=>{
-        alert("updated...");
+        //alert("updated...");
+        this.navCtrl.push(ProfilePage);
         console.log(this.updt);
       }
     );
