@@ -10,8 +10,11 @@ import { email } from "./mailclass";
 */
 @Injectable()
 export class SignupdataProvider {
-  url:string="http://localhost:3000/user/";
-  url1:string="http://localhost:3000/sendmail/";
+  //url:string="http://localhost:3000/user/";
+  //url1:string="http://localhost:3000/sendmail/";
+  
+  url:string="https://eventhorizon1.herokuapp.com/user/";
+  url1:string="https://eventhorizon1.herokuapp.com/sendmail/";
   constructor(public http: HttpClient) {
     console.log('Hello SignupdataProvider Provider');
   }

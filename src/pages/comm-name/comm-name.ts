@@ -52,7 +52,7 @@ export class CommNamePage {
     this.id = this.navParams.get('id');
     this.email = localStorage.getItem("user_email");
     console.log(this.email);
-    console.log(this.id);
+    console.log("id:"+this.id);
     this._comm_data.getCommunityByIdd(this.id).subscribe(
       (dataa: comm_class[]) => {
         this.arr = dataa;
@@ -64,6 +64,7 @@ export class CommNamePage {
         this.ar = item;
         console.log(this.ar);
         console.log("add:" + this.ar[0].e_venue);
+        console.log("id ::"+this.id);
       });
 
     this._past_data.getPastSegment(this.id).subscribe(

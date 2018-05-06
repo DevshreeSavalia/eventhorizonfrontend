@@ -56,7 +56,7 @@
     <ion-list *ngSwitchCase="'upcm'">
       <ion-item *ngFor="let dataa of ar">
         <ion-thumbnail item-start>
-          <img src="http://localhost:3000/images/event/{{dataa.image}}">
+          <img src="https://eventhorizon1.herokuapp.com/images/event/{{dataa.image}}">
         </ion-thumbnail>
         <h2 (click)="up(dataa.e_id)" text-wrap><b>{{dataa.e_name}}</b></h2>
       </ion-item>
@@ -65,7 +65,7 @@
     <ion-list *ngSwitchCase="'past'">
       <ion-item *ngFor="let dataa of past_ar">
         <ion-thumbnail item-start>
-          <img src="http://localhost:3000/images/event/{{dataa.image}}">
+          <img src="https://eventhorizon1.herokuapp.com/images/event/{{dataa.image}}">
         </ion-thumbnail>
         <h2 (click)="past(dataa.e_id)" text-wrap><b>{{dataa.e_name}}</b></h2>
       </ion-item>
@@ -74,7 +74,7 @@
     <ion-list *ngSwitchCase="'member'">
       <ion-item *ngFor="let dataa of mem_ar">
         <ion-thumbnail item-start>
-          <!-- <img src="http://localhost:3000/images/event/{{dataa.image}}"> -->
+          <!-- <img src="https://eventhorizon1.herokuapp.com/images/event/{{dataa.image}}"> -->
         </ion-thumbnail>
         <h2><b>{{dataa.user_name}}</b></h2>
       </ion-item>

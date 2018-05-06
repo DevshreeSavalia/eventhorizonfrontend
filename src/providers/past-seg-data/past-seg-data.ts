@@ -9,8 +9,8 @@ import { Injectable } from '@angular/core';
 */
 @Injectable()
 export class PastSegDataProvider {
-  url:string="http://localhost:3000/pastsgmt/";
- 
+ // url:string="http://localhost:3000/pastsgmt/";
+  url:string="https://eventhorizon1.herokuapp.com/pastsgmt/";
   constructor(public http: HttpClient) {
     console.log('Hello PastSegDataProvider Provider');
   }

@@ -9,7 +9,8 @@ import { Injectable } from '@angular/core';
 */
 @Injectable()
 export class CommDataProvider {
-  url1:string="http://localhost:3000/com_id/";
+  //url1:string="http://localhost:3000/com_id/";
+  url1:string="https://eventhorizon1.herokuapp.com/com_id/";
   constructor(public http: HttpClient) {
     console.log('Hello CommDataProvider Provider');
   }

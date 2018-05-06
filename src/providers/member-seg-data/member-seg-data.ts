@@ -9,7 +9,8 @@ import { Injectable } from '@angular/core';
 */
 @Injectable()
 export class MemberDataProvider {
-  url:string="http://localhost:3000/memsgmt/"
+  //url:string="http://localhost:3000/memsgmt/";
+  url:string="https://eventhorizon1.herokuapp.com/memsgmt/";
   constructor(public http: HttpClient) {
     console.log('Hello MemberDataProvider Provider');
   }

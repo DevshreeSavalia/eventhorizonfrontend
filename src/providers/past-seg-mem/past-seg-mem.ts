@@ -9,7 +9,8 @@ import { Injectable } from '@angular/core';
 */
 @Injectable()
 export class PastSegMemProvider {
-  url:string="http://localhost:3000/pas_mem/";
+  //url:string="http://localhost:3000/pas_mem/";
+  url:string="https://eventhorizon1.herokuapp.com/pas_mem/";
   constructor(public http: HttpClient) {
     console.log('Hello PastSegMemProvider Provider');
   }

@@ -9,7 +9,8 @@ import { Injectable } from '@angular/core';
 */
 @Injectable()
 export class EvtRegProvider {
-  url:string="http://localhost:3000/event_reg/";
+ // url:string="http://localhost:3000/event_reg/";
+  url:string="https://eventhorizon1.herokuapp.com/event_reg/";
   constructor(public http: HttpClient) {
     console.log('Hello EvtRegProvider Provider');
   }

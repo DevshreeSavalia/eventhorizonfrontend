@@ -49,7 +49,7 @@ export class PastevtPage {
     this.past_member.getPastMemb(this.id).subscribe(
       (dt:past_mem[])=>{
         this.arr=dt;
-        console.log(this.arr);
+        console.log("people:"+this.arr);
       }
     );
 

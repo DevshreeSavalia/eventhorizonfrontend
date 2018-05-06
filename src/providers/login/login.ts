@@ -14,7 +14,8 @@ export class LoginProvider {
   constructor(public http: HttpClient) {
     console.log('Hello LoginProvider Provider');
   }
-  url :string="http://localhost:3000/ulogin/";
+  // url :string="http://localhost:3000/ulogin/";
+  url:string="https://eventhorizon1.herokuapp.com/ulogin/";
 
   checkuser(user){
     let body=JSON.stringify(user);

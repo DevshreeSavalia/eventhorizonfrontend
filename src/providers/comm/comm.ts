@@ -14,7 +14,8 @@ export class CommProvider {
     console.log('Hello CommProvider Provider');
   }
 
-  url1:string="http://localhost:3000/comm_route/";
+//url1:string="http://localhost:3000/comm_route/";
+  url1:string="https://eventhorizon1.herokuapp.com/comm_route/";
 
    getCommunityById(id){
      return this.http.get(this.url1+id);

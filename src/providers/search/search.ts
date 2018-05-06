@@ -9,7 +9,8 @@ import { Injectable } from '@angular/core';
 */
 @Injectable()
 export class SearchProvider {
-  url:string="http://localhost:3000/sea_route/";
+ // url:string="http://localhost:3000/sea_route/";
+  url:string="https://eventhorizon1.herokuapp.com/sea_route/";
   constructor(public http: HttpClient) {
     console.log('Hello SearchProvider Provider');
   }

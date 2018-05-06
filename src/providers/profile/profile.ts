@@ -14,8 +14,8 @@ export class ProfileProvider {
     console.log('Hello ProfileProvider Provider');
   }
 
-  url1:string="http://localhost:3000/pro_route/";
-
+  //url1:string="http://localhost:3000/pro_route/";
+  url1:string="https://eventhorizon1.herokuapp.com/pro_route/";
    getProfile(id){
      return this.http.get(this.url1+id);
    }

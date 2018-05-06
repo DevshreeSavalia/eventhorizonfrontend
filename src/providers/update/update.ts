@@ -11,7 +11,8 @@ import { Injectable } from '@angular/core';
 */
 @Injectable()
 export class UpdateProvider {
-  url:string="http://localhost:3000/user/";
+  //url:string="http://localhost:3000/user/";
+  url:string="https://eventhorizon1.herokuapp.com/user/";
   constructor(public http: HttpClient) {
     console.log('Hello UpdateProvider Provider');
   }

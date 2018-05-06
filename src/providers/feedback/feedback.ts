@@ -9,7 +9,8 @@ import { Injectable } from '@angular/core';
 */
 @Injectable()
 export class FeedbackProvider {
-  url:string="http://localhost:3000/feedback/";
+//  url:string="http://localhost:3000/feedback/";
+  url:string="https://eventhorizon1.herokuapp.com/feedback/";
   constructor(public http: HttpClient) {
     console.log('Hello FeedbackProvider Provider');
   }

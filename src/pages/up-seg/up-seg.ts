@@ -46,7 +46,7 @@ export class UpSegPage {
 
   ionViewDidLoad() {
     this.id = this.navParams.get("id");
-    console.log("event:"+this.id);
+    console.log("event::"+this.id);
     this.email=localStorage.getItem("user_email");
     console.log(this.email);
     console.log("ionViewDidLoad UpSegPage");

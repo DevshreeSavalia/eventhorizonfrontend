@@ -9,7 +9,8 @@ import { Injectable } from '@angular/core';
 */
 @Injectable()
 export class UpcomSegDataProvider {
-  url1:string="http://localhost:3000/upcomsegment/";
+  //url1:string="http://localhost:3000/upcomsegment/";
+  url1:string="https://eventhorizon1.herokuapp.com/upcomsegment/";
   constructor(public http: HttpClient) {
     console.log('Hello UpcomSegDataProvider Provider');
   }

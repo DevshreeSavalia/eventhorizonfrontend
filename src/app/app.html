@@ -1,25 +1,23 @@
 <ion-menu [content]="content">
     <ion-content>
     <ion-list>
-      <button ion-item>
+      <button ion-item (click)="upcoming()">
         <b>Upcoming Events</b>
       </button>
-      <button ion-item>
+      <button ion-item (click)="mycomm()">
        <b> My Communities</b>
       </button>
-      <button ion-item>
+      <button ion-item (click)="profile()">
          <b>Profile</b>
       </button>
-        <button ion-item>
-           <b>Going Events</b>
-      </button>
-      <button ion-item>
+       
+      <button ion-item (click)="createcomm()">
          <b>Create Community</b>
       </button>
-        <button ion-item>
+        <button ion-item (click)="createeve()">
          <b>Create Event</b>
       </button>
-        <button ion-item>
+        <button ion-item (click)="search()">
            <b>Search </b>
       </button>
     </ion-list>
