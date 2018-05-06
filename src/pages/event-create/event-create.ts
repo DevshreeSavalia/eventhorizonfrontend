@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { Component,ViewChild } from '@angular/core';
+import {Nav, IonicPage, NavController, NavParams } from 'ionic-angular';
 import { LoginPage } from '../login/login';
 import { event_class } from '../event-create/event_class';
 import { EventCreateProvider } from '../../providers/event-create/event-create';
@@ -16,6 +16,7 @@ import { EventCreateProvider } from '../../providers/event-create/event-create';
   templateUrl: 'event-create.html',
 })
 export class EventCreatePage {
+  @ViewChild(Nav) nav: Nav;
   crte: event_class[] = [];
   e_create: event_class;
   event_id: string;
@@ -38,6 +39,13 @@ export class EventCreatePage {
     console.log(event);
   }
   create() {
+ 
+    if(this.event_name==null || this.event_startdate==null || this.event_enddate==null ||this.event_venue==null ||this.com_id==null ||this.event_desc==null ||this.img==null){
+      alert("Please enter required fields..");
+
+    }
+    else{
+
     //this.e_create=new event_class((+this.event_id),this.event_name,this.event_startdate,this.event_enddate,this.event_venue,(+this.com_id),this.event_desc,this.img);
     console.log('inside create');
     const fd = new FormData();
@@ -56,9 +64,11 @@ export class EventCreatePage {
         alert("created!!");
       }
     );
+    }
+
   }
   logout() {
-    this.navCtrl.parent.parent.setRoot(LoginPage);
+    this.navCtrl.push(LoginPage);
   }
 
 }

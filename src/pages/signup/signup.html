@@ -13,26 +13,31 @@
 </ion-header>
 
 
+
+
 <ion-content padding>
-  <ion-list>
+    <ion-list>  
+     
+   
     <ion-item>
       <ion-label floating><b>Email-id</b></ion-label>
-      <ion-input type="text" [(ngModel)]="email"></ion-input>
+      <ion-input type="email" [(ngModel)]="email" required></ion-input>
     </ion-item>
+  
 
     <ion-item>
       <ion-label floating><b>Username</b></ion-label>
-      <ion-input type="text" [(ngModel)]="uname"></ion-input>
+      <ion-input  type="text" [(ngModel)]="uname"  required></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label floating><b>Mobile</b></ion-label>
-      <ion-input type="number" [(ngModel)]="mobile"></ion-input>
+      <ion-input type="number" [(ngModel)]="mobile" maxlength="10" required></ion-input>
     </ion-item>
     
      <br><ion-item>
         <ion-label><b>Gender</b></ion-label>
-        <ion-select [(ngModel)]="gender">
+        <ion-select   [(ngModel)]="gender" required>
             <ion-option value="female"><b>Female</b></ion-option>
             <ion-option value="male"><b>Male</b></ion-option>
           </ion-select>
@@ -40,16 +45,17 @@
 
   <ion-item>
       <ion-label floating><b>Password</b></ion-label>
-      <ion-input type="password" [(ngModel)]="password"></ion-input>
+      <ion-input  type="password" [(ngModel)]="password" minlength="8" maxlength="16" size="8" required></ion-input>
     </ion-item> 
     
     <br><br><button ion-button color="primary" round small (click)="adduser()"><b>Get OTP</b></button>
     
     <ion-item>
       <ion-label floating><b>OTP</b></ion-label>
-      <ion-input type="number" [(ngModel)]="tokenn"></ion-input>
+      <ion-input   type="number" [(ngModel)]="tokenn" required></ion-input>
     </ion-item> 
 
-    <br><button ion-button color="primary" round full (click)="verify()"><b>SIGN UP</b></button>
-</ion-list> 
+    <br><button color="primary" round full (click)="verify()"><b>SIGN UP</b></button>
+  </ion-list>   
+
 </ion-content>

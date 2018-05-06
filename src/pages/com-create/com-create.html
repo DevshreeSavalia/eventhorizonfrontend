@@ -28,19 +28,19 @@
     <ion-label floating>
       <b>Enter Community ID</b>
     </ion-label>
-    <ion-input type="number" [(ngModel)]="com_id"></ion-input>
+    <ion-input type="number" [(ngModel)]="com_id" required></ion-input>
   </ion-item>
 
   <ion-item>
     <ion-label floating>
       <b>Enter Community Name</b>
     </ion-label>
-    <ion-input type="text" [(ngModel)]="com_nm"></ion-input>
+    <ion-input type="text" [(ngModel)]="com_nm" required></ion-input>
   </ion-item>
 
   <ion-item>
     <ion-label floating><b>Enter Category ID</b></ion-label>
-    <ion-select [(ngModel)]="cat_id">
+    <ion-select [(ngModel)]="cat_id" required>
       <ion-option value="1">
         <b>Technology</b>
       </ion-option>
@@ -78,7 +78,7 @@
     <ion-label floating>
       <b>Enter Community Description</b>
     </ion-label>
-    <ion-input type="text" [(ngModel)]="com_desc"></ion-input>
+    <ion-input type="text" [(ngModel)]="com_desc" required></ion-input>
   </ion-item>
 
   <ion-item>
@@ -93,7 +93,7 @@
     </button>
   </ion-buttons>
   
-  <input type="file" name="file[]" (change)="processWebImage($event)" />
+  <input type="file" name="file[]" (change)="processWebImage($event)" required>
   <button ion-button color="primary" round full (click)="create()">
     <b>Create Community</b>
   </button>

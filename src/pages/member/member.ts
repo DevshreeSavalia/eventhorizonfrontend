@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { Component,ViewChild } from '@angular/core';
+import { Nav,IonicPage, NavController, NavParams } from 'ionic-angular';
 import { HomePage } from '../home/home';
 import {mem_class} from './mem_class'
 import { MemberDataProvider } from '../../providers/member-seg-data/member-seg-data';
@@ -17,6 +17,7 @@ import { LoginPage } from '../login/login';
   templateUrl: 'member.html',
 })
 export class MemberPage {
+  @ViewChild(Nav) nav: Nav;
   ar:mem_class[]=[];
   id:number;
   constructor(public _memdata:MemberDataProvider,public navCtrl: NavController, public navParams: NavParams) {
@@ -38,6 +39,6 @@ export class MemberPage {
     
   }
  logout(){
-  this.navCtrl.parent.parent.setRoot(LoginPage);
+  this.navCtrl.push(LoginPage);
 }
 }

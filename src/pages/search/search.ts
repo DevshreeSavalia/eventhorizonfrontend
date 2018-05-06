@@ -1,9 +1,10 @@
-import { Component } from "@angular/core";
-import { IonicPage, NavController, NavParams } from "ionic-angular";
+import { Component,ViewChild } from "@angular/core";
+import { Nav,IonicPage, NavController, NavParams } from "ionic-angular";
 import { SearchdataProvider } from "../../providers/searchdata/searchdata";
 import { search } from "./search_class";
 import { LoginPage } from "../login/login";
 import { SearchNavigatePage } from "../search-navigate/search-navigate";
+
 
 
 /**
@@ -19,6 +20,7 @@ import { SearchNavigatePage } from "../search-navigate/search-navigate";
   templateUrl: "search.html"
 })
 export class SearchPage {
+  @ViewChild(Nav) nav: Nav;
   ar: search[] = [];
   item: search[] = [];
   constructor(
@@ -58,7 +60,7 @@ export class SearchPage {
   }
 
   logout() {
-    this.navCtrl.parent.parent.setRoot(LoginPage);
+    this.navCtrl.push(LoginPage);
   }
 
 

@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { Component,ViewChild } from '@angular/core';
+import { Nav,IonicPage, NavController, NavParams } from 'ionic-angular';
 import { LoginPage } from '../login/login';
 import { updt_user } from '../update/update_class';
 import { UpdateProvider } from '../../providers/update/update';
@@ -19,6 +19,7 @@ import { ProfilePage } from '../profile/profile';
   templateUrl: 'update.html',
 })
 export class UpdatePage {
+  @ViewChild(Nav) nav: Nav;
   updt:updt_user;
   email:string;
   unm:string;
@@ -46,6 +47,6 @@ export class UpdatePage {
   }
 
   logout(){
-    this.navCtrl.parent.parent.setRoot(LoginPage);
+   this.navCtrl.push(LoginPage);
   }
 }

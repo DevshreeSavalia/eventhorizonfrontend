@@ -48,6 +48,7 @@ export class MyApp {
     this.nav.push(EventCreatePage);
   }
 
+
   
 }
 

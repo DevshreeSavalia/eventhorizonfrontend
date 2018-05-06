@@ -31,27 +31,27 @@
 
   <ion-item>
     <ion-label floating><b>Enter Event Name</b></ion-label>
-    <ion-input type="text" [(ngModel)]="event_name"></ion-input>
+    <ion-input type="text" [(ngModel)]="event_name" required></ion-input>
   </ion-item>
 
 <ion-item>
  <ion-label floating><b>Start Date</b></ion-label>
-  <ion-datetime displayFormat="YYYY/MM/DD" [(ngModel)]="event_startdate"></ion-datetime>
+  <ion-datetime displayFormat="YYYY/MM/DD" [(ngModel)]="event_startdate" required></ion-datetime>
 </ion-item>
 
   <ion-item>
       <ion-label floating><b>End Date</b></ion-label>
-      <ion-datetime displayFormat="YYYY/MM/DD" [(ngModel)]="event_enddate"></ion-datetime>
+      <ion-datetime displayFormat="YYYY/MM/DD" [(ngModel)]="event_enddate" required></ion-datetime>
     </ion-item>
 
   <ion-item>
     <ion-label floating><b>Enter Event Venue</b></ion-label>
-    <ion-input type="text" [(ngModel)]="event_venue"></ion-input>
+    <ion-input type="text" [(ngModel)]="event_venue" required></ion-input>
   </ion-item>
 
   <ion-item>
     <ion-label floating><b>Enter Community Name</b></ion-label>
-     <ion-select [(ngModel)]="com_id">
+     <ion-select [(ngModel)]="com_id" required>
         <ion-option value="1"><b>Software Development Group</b></ion-option>
         <ion-option value="2"><b>Internet Of Things</b></ion-option>
         <ion-option value="3"><b>Positive Thinking</b></ion-option>
@@ -67,7 +67,7 @@
   
   <ion-item>
     <ion-label floating><b>Enter Event Description</b></ion-label>
-    <ion-input type="text" [(ngModel)]="event_desc"></ion-input>
+    <ion-input type="text" [(ngModel)]="event_desc" required></ion-input>
   </ion-item>
 
   <ion-item>

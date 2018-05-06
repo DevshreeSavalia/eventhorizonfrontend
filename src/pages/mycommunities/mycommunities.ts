@@ -1,5 +1,5 @@
-import { Component } from "@angular/core";
-import { IonicPage, NavController, NavParams} from "ionic-angular";
+import { Component,ViewChild } from "@angular/core";
+import { Nav,IonicPage, NavController, NavParams} from "ionic-angular";
 import { comm_class } from "../mycommunities/comm_class";
 import { CommProvider } from "../../providers/comm/comm";
 import { CommNamePage } from "../comm-name/comm-name";
@@ -11,6 +11,7 @@ import { LoginPage } from '../login/login';
   templateUrl: "mycommunities.html"
 })
 export class MycommunitiesPage {
+  @ViewChild(Nav) nav: Nav;
   menuIsHidden: boolean = false;
   c1: comm_class[] = [];
   email_id: string;
@@ -37,6 +38,6 @@ export class MycommunitiesPage {
   }
 
   logout(){
-    this.navCtrl.parent.parent.setRoot(LoginPage);
+    this.navCtrl.push(LoginPage);
   }
 }

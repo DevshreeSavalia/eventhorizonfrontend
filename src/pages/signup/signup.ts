@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { Component,ViewChild } from '@angular/core';
+import { Nav,IonicPage, NavController, NavParams } from 'ionic-angular';
 import { SignupdataProvider } from '../../providers/signupdata/signupdata';
 import { signup } from './signup_class';
 import { TabsPage } from '../tabs/tabs';
@@ -18,6 +18,8 @@ import { email } from '../../providers/signupdata/mailclass';
   templateUrl: 'signup.html',
 })
 export class SignupPage {
+  @ViewChild(Nav) nav: Nav;
+  
   email:string;
   uname:string;
   mobile:number;
@@ -28,6 +30,7 @@ export class SignupPage {
   token:string;
   tokenn:string;
   constructor(public _signdata:SignupdataProvider,public navCtrl: NavController, public navParams: NavParams) {
+    
   }
 
   ionViewDidLoad() {
@@ -35,7 +38,10 @@ export class SignupPage {
   }
 
   adduser(){
-    this.signdt=new signup(this.email,this.uname,(+this.mobile),this.gender,this.password);
+    if(this.email==null || this.uname==null || this.mobile==null || this.gender==null){
+       alert("Please enter the required fields..");
+     }else{
+        this.signdt=new signup(this.email,this.uname,(+this.mobile),this.gender,this.password);
     console.log("signed up..",this.signdt);
       var val = Math.floor(1000 + Math.random() * 9000);
       this.token=val.toString();
@@ -44,19 +50,30 @@ export class SignupPage {
           console.log(data);
         });
         alert('Check your mail!!!');
+       
+     }
+   
   }
 
   verify(){
+     
+
     this._signdata.addUser(this.signdt).subscribe(
       (item:any)=>{
     if(this.token.match(this.tokenn)){
       this.navCtrl.push(TabsPage);
     }
+    // else if(this.tokenn==null){
+    //   alert("Please enter the otp..");
+    // }
     else{
       alert('Invalid Token value...Enter again!!!');
     }
   }
   );
   }
+
+  
+
 
 }

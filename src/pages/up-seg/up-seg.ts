@@ -105,7 +105,7 @@ geo_code(address:string){
   }
 
   logout(){
-    this.navCtrl.parent.parent.setRoot(LoginPage);
+    this.navCtrl.push(LoginPage);
   }
 }
 

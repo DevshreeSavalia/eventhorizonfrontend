@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component,ViewChild } from '@angular/core';
+import {Nav, Platform} from 'ionic-angular';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { LoginPage } from '../login/login';
 import { comm_class } from '../mycommunities/comm_class';
@@ -15,8 +16,10 @@ import { ComCreateProvider } from '../../providers/com-create/com-create';
 @Component({
   selector: 'page-com-create',
   templateUrl: 'com-create.html',
+  
 })
 export class ComCreatePage {
+   @ViewChild(Nav) nav: Nav;
   crte: comm_class[] = [];
   cm_create: comm_class;
   com_id: string;
@@ -39,7 +42,11 @@ export class ComCreatePage {
     console.log(event);
   }
   create() {
-    //this.cm_create = new comm_class((+this.com_id), this.com_nm, (+this.cat_id), this.com_desc, this.img, this.u_email);
+    if(this.com_id==null || this.com_nm==null ||this.cat_id==null ||this.com_desc==null || this.img==null||this.u_email==null){
+      alert("Please enter the required fields..");
+    }
+    else{
+//this.cm_create = new comm_class((+this.com_id), this.com_nm, (+this.cat_id), this.com_desc, this.img, this.u_email);
     console.log('inside create');
     const fd = new FormData();
     fd.append("comm_id", this.com_id);
@@ -55,10 +62,12 @@ export class ComCreatePage {
         alert("created!!");
       }
     );
+    }
+    
 
   }
 
   logout() {
-    this.navCtrl.parent.parent.setRoot(LoginPage);
+    this.navCtrl.push(LoginPage);
   }
 }

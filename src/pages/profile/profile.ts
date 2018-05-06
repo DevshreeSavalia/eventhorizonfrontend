@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
+import { Component,ViewChild } from '@angular/core';
 // import { MenuController } from 'ionic-angular';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { Nav,IonicPage, NavController, NavParams } from 'ionic-angular';
 import { pro_class } from '../profile/pro_class';
 import { ProfileProvider } from '../../providers/profile/profile';
 import { UpdatePage } from '../update/update';
@@ -20,7 +20,7 @@ import { LoginPage } from '../login/login';
   templateUrl: 'profile.html',
 })
 export class ProfilePage {
-
+@ViewChild(Nav) nav: Nav;
   p1: pro_class[] = [];
   email: string;
 
@@ -40,7 +40,7 @@ export class ProfilePage {
       });
   }
   logout() {
-    this.navCtrl.parent.parent.setRoot(LoginPage);
+    this.navCtrl.push(LoginPage);
   }
 
   update_user(email){

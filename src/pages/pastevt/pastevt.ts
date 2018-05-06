@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { Component,ViewChild } from '@angular/core';
+import { Nav,IonicPage, NavController, NavParams } from 'ionic-angular';
 import { past_seg_class } from './past_seg_class';
 import { PastSegIdProvider } from '../../providers/past-seg-id/past-seg-id';
 import { LoginPage } from '../login/login';
@@ -21,6 +21,7 @@ import { PastSegMemProvider } from '../../providers/past-seg-mem/past-seg-mem';
   templateUrl: 'pastevt.html',
 })
 export class PastevtPage {
+  @ViewChild(Nav) nav: Nav;
   ar:past_seg_class[]=[];
   email:string;
   id:number;
@@ -69,6 +70,6 @@ export class PastevtPage {
     );
   }
     logout(){
-      this.navCtrl.parent.parent.setRoot(LoginPage);
+      this.navCtrl.push(LoginPage);
     }
 }

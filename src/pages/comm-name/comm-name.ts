@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { Component,ViewChild } from '@angular/core';
+import { Nav,IonicPage, NavController, NavParams } from 'ionic-angular';
 import { PastevtPage } from '../pastevt/pastevt';
 import { UpSegPage } from '../up-seg/up-seg';
 import { comm_class } from './comm_class_id';
@@ -29,6 +29,7 @@ import { MemberDataProvider } from '../../providers/member-seg-data/member-seg-d
   templateUrl: 'comm-name.html',
 })
 export class CommNamePage {
+  @ViewChild(Nav) nav: Nav;
   [x: string]: any;
   evt: string = "upcm";
   past_ar: past_seg_class[] = [];
@@ -110,6 +111,6 @@ export class CommNamePage {
     this.navCtrl.push(MemberPage, { id: mid });
   }
   logout() {
-    this.navCtrl.parent.parent.setRoot(LoginPage);
+    this.navCtrl.push(LoginPage);
   }
 }

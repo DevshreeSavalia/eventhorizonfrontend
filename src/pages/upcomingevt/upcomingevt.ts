@@ -1,5 +1,5 @@
-import { Component } from "@angular/core";
-import { IonicPage, NavController, NavParams } from "ionic-angular";
+import { Component,ViewChild } from "@angular/core";
+import { Nav,IonicPage, NavController, NavParams } from "ionic-angular";
 import { upcomm_class } from "./upcom_class";
 import { UpcommSegDataProvider } from "../../providers/upcomm-page-data/upcomm-page-data";
 import { LoginPage } from '../login/login';
@@ -17,6 +17,7 @@ import { LoginPage } from '../login/login';
   templateUrl: "upcomingevt.html"
 })
 export class UpcomingevtPage {
+  @ViewChild(Nav) nav: Nav;
   ar: upcomm_class[] = [];
   email_id: string;
   constructor(
@@ -36,6 +37,6 @@ export class UpcomingevtPage {
       });
   }
   logout() {
-    this.navCtrl.parent.parent.setRoot(LoginPage);    
+    this.navCtrl.push(LoginPage);    
   }
 }

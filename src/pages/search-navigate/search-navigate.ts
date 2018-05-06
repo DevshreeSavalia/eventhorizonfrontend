@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { Component,ViewChild } from '@angular/core';
+import { Nav,IonicPage, NavController, NavParams } from 'ionic-angular';
 import { search_dt } from './search_class';
 import { SearchProvider } from '../../providers/search/search';
 import { LoginPage } from '../login/login';
@@ -19,6 +19,7 @@ import { CommDataProvider } from '../../providers/comm-data/comm-data';
   templateUrl: 'search-navigate.html',
 })
 export class SearchNavigatePage {
+  @ViewChild(Nav) nav: Nav;
   arr: search_dt[] = [];
   id: string;
   email: string;
